@@ -1,0 +1,334 @@
+.loginPage{
+    background-image: url(./Anreise2_iStock-613783168.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    padding: 4.3125em 17.5em 4.3125em 19.5em;
+    margin-right: 0px;
+}
+
+.login_container{
+    /* margin: 100px auto 0px auto; */
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    width:  49.40478125em;
+    height: 30.34em;
+}
+
+/* @media only screen and (max-width:450px){
+    .login_container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+} */
+
+.left_side{
+    margin-left: 0.625em;
+    margin-top: 0.625em;
+    width: 18.71875em;
+    height: 30.34em;
+    padding: 8.7151625em 0px 6.9175em 0em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #776156;
+    border: 1px solid #776156;
+    border-radius: 5.9375em 0px 0px 5.9375em;
+}
+
+.sidecontent{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.welcometext{
+    margin:0px 2.44578125em 0em  1em;
+    width:    6.71875em;
+    height: 5.625em;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.9525em;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.logo{
+    margin:-2em 0px 0em 3.203125em;
+    width: 2.296875em;
+    height: 0.8125em;
+    font-family: 'Grechen Fuemen', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.77875em;
+    line-height: 0.7955625em;
+    text-align: center;
+    letter-spacing: -0.0255em;
+    color: #FFFFFF;
+}
+
+.logoIcon{
+    margin:0em 0.01175em 0em 3.42409375em;
+    display: flex;
+    align-items:center ;
+    width: 9.75em;
+    height:8.75em;
+    /*transform: rotate(17.82deg);*/
+}
+
+.right_side{
+    margin-left: -0.0625em;
+    background-image: url(./rectangle.svg),url(./login.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:30.6834375em;
+    height: 30.34em;
+    margin-top: 0.625em; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6.726225em  5.2028125em  7.883425em 0.3903125em;
+}
+
+.close{
+    margin-top: -15.81557px;
+    margin-left: 253.2614px;
+    margin-right: -28.157948px;
+    width:  1em;
+    height:  1em;
+    cursor: pointer;
+}
+
+.title{
+    width:  4.49134375em;
+    height:  1.51875em;
+    font-family:'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.55625em;
+    line-height: 1.51875em;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 1.1572em;
+}
+
+.signwith_btns{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6875em; 
+}
+
+.signwith_btns a{
+    text-decoration: none;
+}
+
+.google_btn{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.889375em;
+    width: 13.7853125em;
+    height: 1.8em;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius:0.875em;
+}
+
+.googleIcon{
+    margin-left: 1.28959375em;
+    margin-top: 0.3034em;
+    margin-bottom:  0.303125em;
+    width: 1.11171875em;
+    height: 1em;
+    border-radius: 0px 0.875em 0.875em 0px;
+}
+
+.sign_withgoogle{
+    margin-top: 0.6em;
+    margin-bottom: 0.3254625em;
+    /*margin-right: 54px;*/
+    width: 9.875em;
+    height: 1em;
+    font-family:'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size:  0.84490625em;
+    line-height:0.8317375em;
+    text-align: center;
+    text-transform: capitalize;
+    color:  #41312A;
+}
+
+.facebook_btn{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap:0.93384375em;
+    width: 13.7853125em;
+    height: 1.8em;
+    background-color: #1562C7;
+    border: 1px solid #1562C7;
+    border-radius: 14px;
+}
+
+.facebookIcon{
+    margin-left: 1.28959375em;
+    margin-top:0.26977225em;
+    margin-bottom:  0.370625em;
+    width: 1.11171875em;
+    height: 1em;
+    border-radius: 0px 0.875em 14px 0.875em;
+}
+
+.sign_withface{
+    margin-top:0.6em;
+    margin-bottom: 0.344375em;
+        /*margin-right: 54px;*/
+    width: 9.875em;
+    height: 1em;
+    font-family:'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size:  0.84490625em;
+    line-height:  0.83125em;
+    text-align: center;
+    text-transform: capitalize;
+    color:  #FFFFFF;
+}
+
+.or{
+    margin-top: 0.625em;
+    display: flex;
+    gap: 0.375em;
+    width: 12.4375em;
+    margin-bottom: 0px;
+}
+
+.or hr{
+    width: 5.33625em;
+    height: 0px;
+    border: 1px solid #FFFFFF;
+    margin-bottom: 0px;
+}
+
+.or span{
+    width: 0.9375em;
+    height: 0.795em;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-size: 0.8125em;
+    font-weight: 700;
+    line-height: 0.795em;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.90);
+}
+
+.form{
+    margin-top:  1.2656875em;
+    margin-bottom: 0px;
+}
+
+.sign_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.username, .password{
+    margin-bottom:0.97625em;
+    background-color: rgba(217, 217, 217, 0.91);
+    border: 1px solid rgba(217, 217, 217, 0.91);
+    border-radius: 14px;
+    width: 20.27775em;
+    height: 1.518825em;
+    padding:  1.209125em  0.334125em  1.209125em 0.646625em;
+}
+
+.username ::placeholder{
+    width: 2.1328125em;
+    height: 0.835em;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8em;
+    line-height: 0.775em;
+    color: rgba(72, 71, 71, 0.88);
+}
+
+.username:focus{
+    border: 1px solid transparent;
+    outline: none;
+    outline-offset: 0px
+}
+
+.password ::placeholder{
+    width: 3.51303125em;
+    height: 0.835em;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8em;
+    line-height: 0.775em;
+    color: rgba(72, 71, 71, 0.88);
+}
+
+.password:focus{
+    border: 1px solid transparent;
+    outline: none;
+    outline-offset: 0px
+}
+
+.sign_btn{
+    margin-top: 15.7895px;
+    cursor: pointer;
+    width: 5.91375em;
+    height: 1.59115em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #41312A;
+    border: 1px solid #41312A;
+    border-radius: 14px;
+    padding:  0.361625em 1.64534375em 0.361625em 1.64534375em;
+}
+
+.login{
+    /*margin-left: auto;*/
+    text-align: center;
+    width: 3.375em;
+    height: 0.8675em;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.889375em;
+    line-height: 0.8679em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.visibleBtn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 18px;
+    height: 15px;
+    margin-left: 85%;
+    margin-top: -13.5%;
+}

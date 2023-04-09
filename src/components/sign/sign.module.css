@@ -1,0 +1,404 @@
+.signPage{
+    background-image: url(./Anreise2_iStock-613783168.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    padding: 4.3125em 17.5em 4.3125em 19.5em;
+    margin-right: 0px;
+}
+
+.sign_container{
+    /* margin: 100px auto 0px auto; */
+    padding: 0px;
+    display: flex;
+    width: 790.4765px;
+    height: 485.44px;
+}
+
+.left_side{
+    margin-right: -57px;
+    margin-top: 10px;
+    width: 299.5px;
+    height: 485.44px;
+    padding: 139.4426px 0px 110.68px 0px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-image: url(./img.svg), url(./signimg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.sidecontent{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.welcometext{
+    margin:0px 57.245px 0px 57.399px;
+    width: 136px;
+    height: 90px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 31.24px;
+    text-align: center;
+    color: #FFFFFF;margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.logo{
+    margin:0px 0px 10px 70.3215px;
+    width: 105px;
+    height: 13px;
+    font-family: 'Grechen Fuemen', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28.46px;
+    line-height: 12.729px;
+    text-align: center;
+    letter-spacing: -0.408px;
+    color: #FFFFFF;
+}
+
+.logoIcon{
+    margin:0px 0.188px 0px 57.966px;
+    display: flex;
+    align-items:center ;
+    width: 156px;
+    height: 140px;
+    /*transform: rotate(17.82deg);*/
+}
+
+.right_side{
+    background: #776156;
+    border: 1px solid #776156;
+    border-radius: 0px 95px 0px 0px;
+    width: 490.935px;
+    height: 485.44px;
+    margin-top: 10px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 79.84px 83.245px 78.11px 83.245px;
+}
+
+.close{
+    margin-top: 50.81557px;
+    margin-left: 253.2614px;
+    margin-right: -28.157948px;
+    margin-bottom: -60px;
+    width:  1em;
+    height:  1em;
+    cursor: pointer;
+}
+
+.title{
+    width: 92.495px;
+    height: 24.30px;
+    font-family:'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24.90px;
+    line-height: 24.3px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 18.5152px;
+    margin-top: 79.84px;
+}
+
+.signwith_btns{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    gap:10px 
+}
+
+.signwith_btns a{
+    text-decoration: none;
+}
+
+.google_btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 17.7875px;
+    width: 220.565px;
+    height: 23.7226px;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 14px;
+}
+
+.googleIcon{
+    margin-left: 20.6px;
+    margin-top: 4.85px;
+    margin-bottom: 4.85px;
+    width: 18.49px;
+    height: 14;
+    border-radius: 0px 14px 14px 0px;
+}
+
+.sign_withgoogle{
+    margin-top: 5.9px;
+    margin-bottom: 4.48px;
+    /*margin-right: 54px;*/
+    width: 125.224px;
+    height: 13.30px;
+    font-family:'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5185px;
+    line-height: 13.30px;
+    text-align: center;
+    text-transform: capitalize;
+    color:  #41312A;
+}
+
+.facebook_btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 18.499px;
+    width: 220.565px;
+    height: 23.7226px;
+    background-color: #1562C7;
+    border: 1px solid #1562C7;
+    border-radius: 14px;
+}
+
+.facebookIcon{
+    margin-left: 20px;
+    margin-top: 4.3px;
+    margin-bottom: 5.93px;
+    width: 17.7875px;
+    height: 13.48px;
+    border-radius: 0px 14px 14px 0px;
+}
+
+.sign_withface{
+    margin-top: 5.93px;
+    margin-bottom: 5.51px;
+        /*margin-right: 54px;*/
+    width: 142px;
+    height: 13.30px;
+    font-family:'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5185px;
+    line-height: 13.30px;
+    text-align: center;
+    text-transform: capitalize;
+    color:  #FFFFFF;
+}
+
+.or{
+    margin-top: 18px;
+    display: flex;
+    gap: 6px;
+    width: 199px;
+}
+
+.or hr{
+    width: 85.38px;
+    height: 0px;
+    border: 1px solid #FFFFFF;
+}
+
+.or span{
+    width: 15px;
+    height: 12.72px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 12.72px;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.90);
+}
+
+.form{
+    margin-top: 27.19px;
+    margin-bottom: 0px;
+}
+
+.sign_form{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.firstname, .lastname{
+    width: 157.24px;
+    height: 24.30px;
+    background-color: rgba(217, 217, 217, 0.91);
+    border: 1px solid rgba(217, 217, 217, 0.91);
+    border-radius: 14px;
+    padding: 5.467px 17px 6px 17px;
+}
+
+.firstname:focus{
+    border: 1px solid transparent;
+    outline: none;
+    outline-offset: 0px;
+}
+
+.firstname ::placeholder{
+    width: 65px;
+    height: 12.7px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.8px;
+    line-height: 12.4px;
+    color: rgba(72, 71, 71, 0.88);
+}
+
+.lastname:focus{
+    border: 1px solid transparent;
+    outline: none;
+    outline-offset: 0px;
+}
+
+.lastname ::placeholder{
+    width: 65px;
+    height: 12.7px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.8px;
+    line-height: 12.4px;
+    color: rgba(72, 71, 71, 0.88);
+}
+.email{
+    margin-top: 0px;
+    width: 326px;
+    height: 24.3px;
+    background-color: rgba(217, 217, 217, 0.91);
+    border: 1px solid rgba(217, 217, 217, 0.91);
+    border-radius: 14px;
+    padding: 5.467px 17px 5.467px 17px;
+    margin-bottom :15px; 
+}
+
+.email:focus{
+    border: 1px solid transparent;
+    outline: none;
+    outline-offset: 0px;
+}
+
+.password{
+    margin-top: 0px;
+    width: 326px;
+    height: 24.3px;
+    background-color: rgba(217, 217, 217, 0.91);
+    border: 1px solid rgba(217, 217, 217, 0.91);
+    border-radius: 14px;
+    padding: 5.467px 17px 5.467px 17px;
+    margin-bottom :15px; ;
+}
+
+.password:focus{
+    border: 1px solid transparent;
+    outline: none;
+    outline-offset: 0px;
+}
+
+.email ::placeholder{
+    width: 56px;
+    height: 13.36px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 13px;
+    text-align: center;
+    color: rgba(72, 71, 71, 0.88);
+}
+
+.password ::placeholder{
+    width: 56px;
+    height: 13.36px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 13px;
+    text-align: center;
+    color: rgba(72, 71, 71, 0.88);
+}
+.question{
+    width: 256.14px;
+    height: 17px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17.076px;
+    line-height: 16.779px;
+    text-align: center;
+    color: #F5F5F5;
+    margin-top: 24.87px;
+    margin-bottom: 78px;
+}
+.login{
+    width: 55px;
+    height: 22px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.345px;
+    line-height: 20.8px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #e09a7b;
+}
+
+.sign_btn{
+    cursor: pointer;
+    width: 95px;
+    height: 25.45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 17px; 
+    background-color: #41312A;
+    border: 1px solid #41312A;
+    border-radius: 14px;
+    padding: 5.786px 10.78575px 5.786px 19.78575px;
+}
+
+.signup{
+    /*margin-left: auto;*/
+    text-align: center;
+    width: 54px;
+    height: 13.88px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14.23px;
+    line-height: 13.8864px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.visibleBtn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 18px;
+    height: 15px;
+    margin-left: 85%;
+    margin-top: -10.5%;
+}
