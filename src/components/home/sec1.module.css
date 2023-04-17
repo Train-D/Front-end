@@ -1,0 +1,192 @@
+.sec1{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-image: url("./bgcolor.svg"), url("./bg1.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-attachment:fixed; */
+    padding-bottom: 28% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.title{
+    display: flex;
+    flex-direction: column;
+    width: 52%;
+    text-align: center;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: -0.408px;
+    margin-top: 22%;
+    margin-bottom:16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title span{
+    width: 100%;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: -0.408px;
+}
+
+/*Tablet mode*/
+@media only screen and (min-width:501px) and (max-width:1000px){
+    .title{
+        width: 100%;
+        font-size: 24px;
+    }
+    .title span{
+        width: 100%;
+        font-size: 24px;
+    }
+    
+}
+
+/* mobile mode */
+@media only screen and (max-width :500px){
+    .title{
+        width: 100%;
+        font-size: 20px;
+    }
+    .title span{
+        width: 100%;
+        font-size: 20px;
+    }
+}
+
+.buttons{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    gap: 16px;
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+/*Tablet mode*/
+@media only screen and (min-width:501px) and (max-width:1000px){
+    .buttons{
+        width: 100%;
+    }
+}
+
+/* mobile mode */
+@media only screen and (max-width :500px){
+    .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.book_btn{
+    cursor: pointer;
+    width: 38.1%;
+    height:36px;
+    padding: 0px;
+    border: 1px solid #41312A;
+    border-radius: 30px;
+    background-color: #41312A;
+}
+
+.book_btn span{
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    margin: 0px;
+    width: 60%;
+    height: 35.5%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 7px;
+    letter-spacing: -0.408px;
+    color: #FFFFFF;
+}
+@media only screen and (min-width:501px) and (max-width:1000px){
+    .book_btn{
+        width: 20%;
+        height:36px;
+    }
+    
+    .book_btn span{
+        width: 100%;
+        font-size: 18px;
+        line-height: 5px;
+    }
+}
+
+/* mobile mode */
+@media only screen and (max-width :500px){
+    .book_btn{
+        width: 29%;
+        height:36px;
+    }
+    
+    .book_btn span{
+        width: 40%;
+        font-size: 15px;
+        line-height: 5px;
+    }
+}
+.about_btn{
+    cursor: pointer;
+    width: 39%;
+    height:36px;
+    padding: 0px;
+    border: 1px solid #FFFFFF;
+    border-radius: 30px;
+    background-color: rgba(112, 115, 88, 0.25);
+}
+
+.about_btn span{
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    margin: 0px;
+    width: 60%;
+    height: 35.5%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 7px;
+    letter-spacing: -0.408px;
+    color: #FFFFFF;
+}
+
+/*tabletMode*/
+@media only screen and (min-width:501px) and (max-width:1000px){
+    .about_btn{
+        width: 20%;
+        height:36px;
+    }
+    
+    .about_btn span{
+        width: 100%;
+        font-size: 18px;
+        line-height: 5px;
+    }
+}
+
+/* mobile mode */
+@media only screen and (max-width :500px){
+    .about_btn{
+        width: 29%;
+        height:36px;
+    }
+    
+    .about_btn span{
+        width: 40%;
+        font-size: 15px;
+        line-height: 5px;
+    }
+}
