@@ -1,0 +1,115 @@
+.mobile_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 16em;
+    padding: 0px;
+    padding-bottom: 3em;
+    width: 100%;
+}
+.leftsec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5.75em;
+    margin-left: 0em;
+    margin-right: 4.5em;
+}
+.leftsec h1{
+    margin: 0px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: -0.022px;
+    font-size: 2.25em;
+}
+.leftsec h4{
+    margin: 0px;
+    margin-top: 0.5em;
+    margin-bottom:1.4em;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.022px;
+    font-size: 1.4em;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+    margin: 0px;
+}
+.google_btn{
+    width: 12em;
+    height: 3.5em;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.googleIcon{
+    width: 1.75em;
+    height: 1.75em;
+}
+.google_btn .text h6{
+    margin: 0px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.408px;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+}
+.google_btn .text h5{
+    margin: 0px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.408px;
+    font-size: 1.1em;
+}
+.apple_btn{
+    width: 12em;
+    height: 3.5em;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center
+}
+.appleIcon{
+    width: 1.75em;
+    height: 1.75em;
+}
+.apple_btn .text h6{
+    margin: 0px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.408px;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+}
+.apple_btn .text h5{
+    margin: 0px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.408px;
+    font-size: 1.1em;
+}
+.mobileImg{
+    width:30em ;
+    height: 24em;
+}

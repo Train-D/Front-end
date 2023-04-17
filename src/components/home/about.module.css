@@ -1,0 +1,223 @@
+.about_container{
+    width: 100%;
+    padding-left: 54px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 160px;
+}
+.leftsec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.leftsec h1{
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: -0.408px;
+    color: #4E4039;
+    font-size: 32px;
+    line-height: 11.2px;
+    margin: 0px;
+}
+.leftsec p{
+    width: 23em;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 300;
+    letter-spacing: -0.408px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #4E4039;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+.seemore_btn{
+    width: 150px;
+    height: 48px;
+    background-color: #4E4039;
+    border: 1px solid #4E4039;
+    border-radius: 30px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: -0.408px;
+    color: #FFFFFF;
+    font-size: 17.6px;
+    letter-spacing: -0.408px;
+    margin: 0px;
+}
+.rightsec{
+    display: flex;
+    /* margin-left:10em; */
+}
+.book_box{
+    padding: 4.8px 0em 16px 20.8px;
+    width: 336px;
+    background-color: #4E4039;
+    border: 1px solid #4E4039;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 72px;
+}
+.bookIcon{
+    width: 56px;
+    height: 52px;
+    margin: 0px;
+}
+.book_box h1{
+    width: 160px; 
+    margin: 0px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: -0.408px;
+    font-size: 20.8px;
+    line-height: 6.4px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.book_box p{
+    margin: 0px;
+    margin-top: 3px;
+    width: 18em;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 300;
+    letter-spacing: -0.408px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+.trust_box{
+    padding: 4.8px 0em 16px 20.8px;
+    width: 336px;
+    background-color: #4E4039;
+    border: 1px solid #4E4039;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+.trustIcon{
+    width: 56px;
+    height: 52px;
+    margin: 0px;
+}
+.trust_box h1{
+    width: 160px; 
+    margin: 0px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: -0.408px;
+    font-size: 20.8px;
+    line-height: 4px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.trust_box p{
+    margin: 0px;
+    margin-top: 3px;
+    width: 288px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 300;
+    letter-spacing: -0.408px;
+    font-size: 14.4px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+.sec2{
+    padding: 0px;
+}
+.lines{
+    margin: 0px;
+    width: 32px;
+    height: 400px;
+}
+.safety_box{
+    padding: 4.8px 0em 16px 20.8px;
+    width: 336px;
+    background-color: #4E4039;
+    border: 1px solid #4E4039;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 28.8px;
+}
+.safetyIcon{
+    width: 52px;
+    height: 48px;
+    margin: 0px;
+}
+.safety_box h1{
+    width: 160px; 
+    margin: 0px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: -0.408px;
+    font-size: 20.8px;
+    line-height: 6.4px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.safety_box p{
+    margin: 0px;
+    margin-top: 3px;
+    width: 288px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 300;
+    letter-spacing: -0.408px;
+    font-size: 14.4px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+.track_box{
+    padding: 4.8px 0em 16px 20.8px;
+    width: 336px;
+    background-color: #4E4039;
+    border: 1px solid #4E4039;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+.trainIcon{
+    width: 44px;
+    height: 40px;
+    margin: 0px;
+}
+.track_box h1{
+    width: 160px; 
+    margin: 0px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+    letter-spacing: -0.408px;
+    font-size: 20.8px;
+    line-height: 6.4px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.track_box p{
+    margin: 0px;
+    margin-top: 3px;
+    width:288px;
+    font-style: normal;
+    font-family: 'Inria Serif', serif;
+    font-weight: 300;
+    letter-spacing: -0.408px;
+    font-size: 14.4px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
