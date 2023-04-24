@@ -3,6 +3,7 @@ import footerStyle from "./footer.module.css";
 import facebookIcon from"./facebook.svg";
 import instgramIcon from"./instgram.svg";
 import logoIcon from"./logo.svg";
+import {Link} from "react-router-dom";
 
 export default function Footer(){
     return(
@@ -11,11 +12,11 @@ export default function Footer(){
                 <div className={footerStyle.sec1}>
                     <div className={footerStyle.left_sec}>
                         <ul className={footerStyle.list}>
-                            <li className={footerStyle.list_items}><a href="/">HOME</a></li>
-                            <li className={footerStyle.list_items}><a href="/">ABOUT</a></li>
-                            <li className={footerStyle.list_items}><a href="/">BOOKING</a></li>
-                            <li className={footerStyle.list_items}><a href="/">STATIONS</a></li>
-                            <li className={footerStyle.list_items}><a href="/">CONTACT US</a></li>
+                            <li className={footerStyle.list_items}><Link to="/">HOME</Link></li>
+                            <li className={footerStyle.list_items}><Link to="/about">ABOUT</Link></li>
+                            <li className={footerStyle.list_items}><Link to="/book">BOOKING</Link></li>
+                            <li className={footerStyle.list_items}><Link to="/stations">STATIONS</Link></li>
+                            <li className={footerStyle.list_items}><Link to="/contact">CONTACT US</Link></li>
                         </ul>
                     </div>
                     <div className={footerStyle.contact_sec}>

@@ -1,7 +1,7 @@
 import React from "react";
 import navStyle from"./navbar.module.css";
 import logoIcon from"./logo.svg";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function Navbar(){
     return(
@@ -14,19 +14,24 @@ export default function Navbar(){
                 <li className={navStyle.links}>
                     <ul>
                         <li>
-                            <a href="/">HOME</a>
+                            {/* <a href="/">HOME</a> */}
+                            <Link to="/">HOME</Link>
                         </li>
                         <li>
-                            <a href="/">ABOUT</a>
+                            {/* <a href="../about/AboutUs.js">ABOUT</a> */}
+                            <Link to="/about">ABOUT</Link>
                         </li>
                         <li>
-                            <a href="../booking/Book.js">BOOKING</a>
+                            {/* <a href="/">BOOKING</a> */}
+                            <Link to="/book">BOOKING</Link>
                         </li>
                         <li>
-                            <a href="../stations/Stations.js">STATIONS</a>
+                            {/* <a href="/">STATIONS</a> */}
+                            <Link to="/stations">STATIONS</Link>
                         </li>
                         <li>
-                            <a href="/">CONTACT US</a>
+                            {/* <a href="/">CONTACT US</a> */}
+                            <Link to="/contact">CONTACT US</Link>
                         </li>
                     </ul>
                 </li>

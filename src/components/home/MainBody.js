@@ -11,7 +11,7 @@ export default function MainBody(){
             <Search />
             <Stationsec />
             <Aboutsec />
-            {/* <Mobilesec /> */}
+            <Mobilesec />
         </div>
     )
 }
