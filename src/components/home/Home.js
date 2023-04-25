@@ -14,7 +14,7 @@ export default function Home(){
         <div className={homeStyle.home_container}>
             <Section1 />
             <MainBody />
-            {/* <Footer /> */}
+            <Footer />
         </div>
     )
 }
