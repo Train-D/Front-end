@@ -1,5 +1,6 @@
 import React from"react";
 import { useState } from "react";
+import Login from "../login/Login";
 import styleSign from "./sign.module.css";
 import googleIcon from"./flat-color-icons_google.svg";
 import facebookIcon from"./logos_facebook.svg";
@@ -7,7 +8,8 @@ import logoIcon from"./logo.svg";
 import close from"./Vector.svg";
 import visibleIcon from"./visible.svg";
 
-export default function Sign(){
+export default function Sign(props){
+    const [openLogin, setOpenLogin] = useState(false);
 
     const handleSign = (e) =>{
         e.preventDefault();
@@ -20,9 +22,10 @@ export default function Sign(){
     }
 
 
-    return(
-        <div className={styleSign.signPage}>
-            <div className={styleSign.sign_container}>
+    return(props.trigger) ? (
+        <div>
+            <div className={styleSign.signPage}>
+                <div className={styleSign.sign_container}>
             <div className={styleSign.left_side}>
                 <div className={styleSign.sidecotent}>
                     <h5 className={styleSign.welcometext}>Welcome to</h5>
@@ -31,7 +34,7 @@ export default function Sign(){
                 </div>
             </div>
             <div className={styleSign.right_side}>
-                <img src={close} alt="" className={styleSign.close}/> 
+                <img src={close} alt="" className={styleSign.close} onClick={() => props.setTrigger(false)}/> 
                 <h4 className={styleSign.title}>SIGN UP</h4>
                 <div className={styleSign.signwith_btns}>
                     <a href="https://mail.google.com/mail/u/0/#inbox">
@@ -69,12 +72,14 @@ export default function Sign(){
                             onClick={togglePassword}>
                             <img src={visibleIcon} alt=""/>
                         </button>
-                        <button type="submit" className={styleSign.sign_btn}><span className={styleSign.signup}>sign up</span></button>
+                        <button type="submit" className={styleSign.sign_btn}  onClick={() => setOpenLogin(true)}><span className={styleSign.signup}>sign up</span></button>
                     </form>
                 </div>
-                <p className={styleSign.question}>already have an account?<span className={styleSign.login}>login</span></p>
+                <p className={styleSign.question}>already have an account?<span className={styleSign.login} onClick={() => setOpenLogin(true)}>login</span></p>
             </div>
+            </div>
+            </div>
+            <Login  trigger={openLogin} setTrigger={setOpenLogin}/>
         </div>
-        </div>
-    )
+    ) :"";
 }

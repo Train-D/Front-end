@@ -213,15 +213,3 @@
         width: 80%;
     }
 }
-.footer{
-    background-color: #4C4033;
-    border: 1px solid #4C4033;
-}
-.footer h1{
-    font-family: 'Inria Serif', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    color: #FFFFFF;
-    text-align: center;
-}

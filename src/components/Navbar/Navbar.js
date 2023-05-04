@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import navStyle from"./navbar.module.css";
 import logoIcon from"./logo.svg";
+import Sign from "../sign/Sign"
 import {Link} from "react-router-dom";
 
 export default function Navbar(){
+    const [openSign, setOpenSign] = useState(false)
+
     return(
         <div className={navStyle.navbar_container}>
             <ul className={navStyle.nav_list}>
@@ -36,9 +39,10 @@ export default function Navbar(){
                     </ul>
                 </li>
                 <li className={navStyle.signup}>
-                    <button className={navStyle.sign_btn}><span>SIGN UP</span></button>
+                    <button className={navStyle.sign_btn} onClick={() => setOpenSign(true)}><span>SIGN UP</span></button>
                 </li>
             </ul>
+            <Sign trigger={openSign} setTrigger={setOpenSign}/>
         </div>
     )
 }
