@@ -50,9 +50,6 @@ export default function AboutUs(){
                         We offer competitive rates and exclusive discounts on train tickets, ensuring you get the best deals,
                         Book tickets on the go with our convenient mobile app, available for both iOS and Android devices.</p>
                 </div>
-                <div className={style.footer}>
-                    <h1>@Copyright 2022</h1>
-                </div>
             </div>
         </div>
     )

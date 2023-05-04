@@ -7,7 +7,7 @@ import logoIcon from"./logo.svg";
 import visibleIcon from"./visible.svg";
 import close from"./Vector.svg";
 
-export default function Signin(){
+export default function Login(props){
 
     const handleLogin = (e) =>{
         e.preventDefault();
@@ -19,7 +19,7 @@ export default function Signin(){
         setPasswordShown(!passwordShown)
     }
 
-    return(
+    return(props.trigger) ? (
         <div className={styleLogin.loginPage}>
             <div className={styleLogin.login_container}>
             <div className={styleLogin.left_side}>
@@ -30,7 +30,7 @@ export default function Signin(){
                 </div>
             </div>
             <div className={styleLogin.right_side}>
-                <img src={close} alt="" className={styleLogin.close}/> 
+                <img src={close} alt="" className={styleLogin.close} onClick={() => props.setTrigger(false)}/> 
                 <h4 className={styleLogin.title}>LOGIN</h4>
                 <div className={styleLogin.signwith_btns}>
                     <a href="https://mail.google.com/mail/u/0/#inbox">
@@ -54,7 +54,7 @@ export default function Signin(){
                 <div className={styleLogin.form}>
                     <form className={styleLogin.sign_form} onSubmit={handleLogin}>
                         <input type="text" name="name" className={styleLogin.username} placeholder="Name" />
-                        <input type={passwordShown ? "text" : "password"} 
+                        <input type={passwordShown ? "text" : "password" } 
                             name="password" 
                             className={styleLogin.password} 
                             placeholder="Password"/>
@@ -69,5 +69,5 @@ export default function Signin(){
             </div>
         </div>
         </div>
-    )
+    ) : "";
 }

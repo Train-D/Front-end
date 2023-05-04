@@ -1,11 +1,15 @@
 .loginPage{
-    background-image: url(./Anreise2_iStock-613783168.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 4.3125em 17.5em 4.3125em 19.5em;
-    margin-right: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6em 17.5em 5em 19.5em;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .login_container{

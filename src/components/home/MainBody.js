@@ -1,6 +1,6 @@
 import React from "react";
 import style from"./mainbody.module.css";
-import Search from "./Search";
+import Search from "./SearchHome";
 import Mobilesec from "./Mobilesec";
 import Aboutsec from "./Aboutsec";
 import Stationsec from "./Stationsec";

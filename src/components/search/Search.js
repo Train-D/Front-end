@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import style from"./search.module.css";
+import Timetable from "./Timetable";
+import {Link} from "react-router-dom";
+
+
 export default function Search(){
+    const [isShown, setIsShown] = useState(false);
+    const [padding, setPadding] = useState("19%");
+    const handleClick = event =>{
+        setIsShown(true);
+    } 
+
     const[select, setSelect] = useState("");
     
     const[isHover, setIsHover] = useState(false);
@@ -21,7 +31,8 @@ export default function Search(){
     const date = today.setDate(today.getDate() + numberOfDaysToAdd);
     const defaultValue = new Date(date).toISOString().split('T')[0]
     return(
-        <div className={style.search_container}>
+        <div>
+            <div className={style.search_container}>
                 <select name="From" 
                     className={style.from_list}
                     onChange={(e)=>{
@@ -36,6 +47,8 @@ export default function Search(){
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
+
+                        
                         Cairo
                     </option>
                     <option 
@@ -131,7 +144,9 @@ export default function Search(){
                     </option>
                 </select>
                 <input type="date" className={style.date} placeholder="Date" defaultValue={defaultValue}/>
-                    <button className={style.search_btn}><span>Search</span></button>
+                <button className={style.search_btn} onClick={handleClick} ><span>Search</span></button>
             </div>
+            {isShown && <Timetable />}
+        </div>
     )
 }

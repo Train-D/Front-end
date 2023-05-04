@@ -1,0 +1,94 @@
+.reservation__container{
+    border: 1px solid red;
+    width:56%;
+}
+.avilableOrNot__container{
+    display: flex;
+    align-items: center;
+    gap:14px;
+}
+.unavilable__box{
+    width:32px;
+    height: 27px;
+    background-color: #4e4039;
+    border: 1px solid #4e4039;
+    border-radius: 9px;
+}
+.avilable__box{
+    width:32px;
+    height: 27px;
+    background-color: #D6C0B8;
+    border: 1px solid rgba(94, 59, 32, 0.94);
+    border-radius: 9px;
+}
+.avilable__text, .unavilable__text{
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: -0.408px;
+    color:#FFFFFF
+}
+.trains__body{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 2%;
+    /* border: 1px solid black; */
+    height: 100%;
+    background-image: url("./Rectangle\ 54.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.classA, .classB, .classC, .classD{
+    display: flex;
+    gap: 2px;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+}
+.classes{
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    gap:0px;
+    /* border: 2px solid red; */
+}
+.classA__text,.classB__text,.classC__text,.classD__text{
+    width: 50%;
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 26%;
+    align-items: center;
+    margin: 0px;
+    margin-left:5.5%;
+    padding: 0px;
+}
+.classD__text{
+    display: flex;
+    margin-left: 5%;
+    margin-right: 1%;
+    gap: 22%;
+}
+.classes div h1{
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: -0.408px;
+    color:#FFFFFF;
+    margin: 0px;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.train__car1{
+    background-image: url("./traincar1.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

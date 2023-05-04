@@ -33,9 +33,6 @@ export default function Footer(){
                         <h1 className={footerStyle.logo}>TrainD</h1>
                     </div>
                 </div>
-                <div className={footerStyle.sec2}>
-                    <h1 className={footerStyle.footer_text}>@ copyright 2022 </h1>
-                </div>
             </footer>
         </div>
     )
