@@ -1,7 +1,33 @@
 import React from "react";
+import style from"./Stations.module.css";
+import Navbar from"../Navbar/Navbar";
 
 export default function Stations(){
     return(
-        <h1>Stations</h1>
+        <div className={style.stations}>
+                <div className={style.navbar__container}>
+                    <Navbar/>
+                </div>
+            <div className={style.body_contant}>
+
+                    <div className={style.leftpart}>
+                        <div className={style.leftpart1}>
+                            <p><span>Learn more</span> about Egypt's stations.</p> 
+                        </div>
+                        <div className={style.leftpart2}>
+                            <p>Choose station and you will get information about it.</p> 
+                        </div>
+                        
+                    </div>
+                    <div className={style.rightpart}>
+                        <div className={style.searchbar}>
+                            <input placeholder="Enter station name" className={style.search}/>
+                        </div>
+                        
+
+                    </div>
+            </div>
+
+        </div>
     )
 }
