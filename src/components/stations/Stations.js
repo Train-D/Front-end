@@ -1,6 +1,7 @@
 import React from "react";
 import style from"./Stations.module.css";
 import Navbar from"../Navbar/Navbar";
+import {SearchBar} from"./SearchBar";
 
 export default function Stations(){
     return(
@@ -8,7 +9,7 @@ export default function Stations(){
                 <div className={style.navbar__container}>
                     <Navbar/>
                 </div>
-            <div className={style.body_contant}>
+            <div className={style.body_station}>
 
                     <div className={style.leftpart}>
                         <div className={style.leftpart1}>
@@ -20,9 +21,7 @@ export default function Stations(){
                         
                     </div>
                     <div className={style.rightpart}>
-                        <div className={style.searchbar}>
-                            <input placeholder="Enter station name" className={style.search}/>
-                        </div>
+                        <SearchBar/>
                         
 
                     </div>

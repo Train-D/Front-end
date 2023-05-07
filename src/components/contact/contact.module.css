@@ -258,10 +258,10 @@ form{
     }
     .leftpart1,.leftpart2{
         display: inline-block;
-    
     }
     .icon_data{
-        text-overflow: ellipsis;
+        word-break: break-all;
+        line-height: 1;
         letter-spacing: -1px;
     }
     .rightpart{
