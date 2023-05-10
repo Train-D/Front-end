@@ -1,0 +1,144 @@
+.detials{
+    width: 100%;
+    height: 100%;
+    background-color: #CAC4C1;
+    padding:0px;
+    margin: 0px;
+    
+}
+.body_detials{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("./bg1.png"),url("./bg2.png");
+    background-repeat:round ;
+    background-size:cover;
+    background-attachment:scroll;
+    margin-top:10%;
+}
+
+.body{
+    width: 90%;
+    height:90%;
+    margin:auto;
+    margin-top: -5%;
+    margin-bottom: 5%;
+    background-image: url("./station.png");
+    background-repeat:round ;
+    background-size:cover;
+    background-attachment:local;
+    border-radius: 20px;
+  }
+
+  .body_contant1{
+    width: 30%;
+    height:5%;
+    margin-top:5%;
+    margin-left:0%;
+    padding-left: 5%;
+    border-radius: 0px 20px 20px 0;
+    background: rgba(103, 86, 77, 0.93);
+    text-align: left;
+    line-height: 3;
+    font-size: 18px;
+    font-family: 'Inria Serif';
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+
+
+
+  }
+  .body_contant2{
+    width: 100%;
+    height:100%;
+    background-color:  rgba(126, 112, 106, 0.89);
+    margin-top: 45%;
+    border-radius:20px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 6%;
+
+  }
+
+  .station_info1{
+    width: 65%;
+    height: 100%;
+    padding: 4%;
+    padding-right: 0%;
+    font-family: 'Inria Serif';
+    font-style: normal;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 2;
+    white-space: normal;
+    
+  }
+  
+
+  .station_info2{
+    width: 35%;
+    margin: auto;
+    margin-right:4%;
+    border-radius: 20px;
+    background: rgba(103, 86, 77, 0.93);
+    display: inline-grid;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bolder;
+    font-family: 'Inria Serif';
+    line-height: 2.2;
+    padding: 5%;
+  }
+  .station_info2 span{
+    font-size: 14px;
+  }
+  .footer{
+    background-color: #4C4033;
+    border: 1px solid #4C4033;   
+}
+.footer h1{
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-weight: 100%;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/*tabletMode*/
+@media only screen and (min-width:501px) and (max-width:1000px){
+   .body_contant2{
+    flex-direction: column;
+    gap: 0%;
+    margin-top: 20%;
+   }
+   .station_info1,.station_info2{
+    width: 90%;
+    margin: auto;
+   }
+    
+}
+
+/* mobile mode */
+@media only screen and (max-width :500px){
+  .body_contant1{
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+  }
+  .body_contant2{
+    flex-direction: column;
+    gap: 0%;
+   }
+   .station_info1,.station_info2{
+    width: 90%;
+    margin: auto;
+   }
+
+    
+}

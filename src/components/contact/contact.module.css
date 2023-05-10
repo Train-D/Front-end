@@ -214,19 +214,6 @@ form{
     color: #FFFFFF;
 }
 
-.footer{
-    background-color: #4C4033;
-    border: 1px solid #4C4033;   
-}
-.footer h1{
-    font-family: 'Inria Serif', serif;
-    font-style: normal;
-    font-weight: 100%;
-    font-size: 20px;
-    color: #FFFFFF;
-    text-align: center;
-}
-
 
 /*tabletMode*/
 @media only screen and (min-width:501px) and (max-width:1000px){
@@ -271,10 +258,10 @@ form{
     }
     .leftpart1,.leftpart2{
         display: inline-block;
-    
     }
     .icon_data{
-        text-overflow: ellipsis;
+        word-break: break-all;
+        line-height: 1;
         letter-spacing: -1px;
     }
     .rightpart{
