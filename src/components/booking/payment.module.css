@@ -1,0 +1,135 @@
+.payment__container{
+    width: 36%;
+    /* border: 1px solid black; */
+}
+.creditcard{
+    position: relative;
+    z-index: 1;
+    background-color: #42322B;
+    border: 1px solid #42322B;
+    border-radius: 15px;
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3.5%;
+    padding-bottom: 4%;
+    margin-top: -13%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.creditcard div{
+    margin-top: 1%;
+    /* border: 1px solid black; */
+}
+.creditcard div h1{
+    margin: 0px;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    color: rgba(255, 255, 255, 0.9);
+}
+.payment__form{
+    width: 100%;
+    padding-top:15%;
+    padding-bottom: 9%;
+    padding-left:11%;
+    padding-right: 5%;
+    margin-top: -10%;
+    background-color: rgba(78, 64, 57, 0.51);
+    border:1px solid rgba(78, 64, 57, 0.51);
+    border-radius: 73px;
+}
+.cardNumber, .userName, .userEmail{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+.cardNumber label, .userEmail label, .userName label{
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+}
+.cardNumber input{
+    width: 70%;
+    background-color: #E1E1E1;
+    border: 1px solid #E1E1E1;
+    border-radius: 14PX;
+    background-image: url("./crediticon.svg");
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 22px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 15%;
+}
+.userEmail input, .userName input{
+    width: 70%;
+    background-color: #E1E1E1;
+    border: 1px solid #E1E1E1;
+    border-radius: 14px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+}
+.cvvNumber{
+    display: flex;
+    margin-top: 2%;
+    gap: 3%;
+}
+.expiryDate{
+    display: flex;
+    margin-top: 2%;
+    gap: 3%;
+}
+.cvvNumber .labels{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+}
+.cvvNumber input{
+    width: 25%;
+    background-color: #E1E1E1;
+    border: 1px solid #E1E1E1;
+    border-radius: 14px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+.cvvNumber input::placeholder{
+    text-align: center;
+    margin: 0px;
+}
+.expiryDate .labels{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    /* border:1px solid black; */
+}
+.expiryDate .inputs{
+    width: 50%;
+    display: flex;
+    gap: 10%;
+    margin: 0px;
+    padding: 0px;
+    /* border:1px solid black; */
+}
+.expiryDate .inputs input{
+    width:40%;
+    padding-top: 0px;
+    padding-bottom: 0px; 
+    text-align: center;
+    background-color: #E1E1E1;
+    border: 1px solid #E1E1E1;
+    border-radius:12px;
+}

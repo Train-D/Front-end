@@ -5,11 +5,63 @@
     background-repeat: no-repeat;
     background-position: cover;
 }
-.book_container{
+.main_body{
     width: 100%;
     background-image: url("./bg.svg");
     background-repeat: no-repeat;
     background-position: cover;
+    margin-top: 12%;
+    margin-bottom: 0px;
+    padding-left: 3%;
+}
+.book_container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 2%;
+}
+.book_button{
+    width: 100%;
     margin-top: 0px;
-    margin-top: 128px;
+    margin-bottom: 0px;
+    display: flex;
+    position: relative;
+    /* border: 1px solid black; */
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.price{
+    border:1px solid #000000; 
+    border-radius:36px;
+    width: 12%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 1.5%;
+}
+.price span{
+    font-family:'Inria Serif, serif';
+    font-style:normal; 
+    font-weight:500;
+    font-size:1.5em; 
+    line-height:22px; 
+    letter-spacing:-0.408px;
+    color:#FFFFFF;
+}
+.book_btn{
+    background-color:#4E4039;
+    border:1px solid #4E4039;
+    border-radius:30px;
+    font-family:'Inria Serif, serif';
+    font-style:normal;
+    font-weight:500;
+    font-size:1.5em;
+    line-height:22px;
+    letter-spacing:-0.408px;
+    color:#FFFFFF;
+    width: 12%;
+    position: relative;
+    z-index: 1;
+    margin-left: -3%;
+    cursor: pointer;
 }
