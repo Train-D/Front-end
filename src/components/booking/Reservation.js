@@ -3,12 +3,26 @@ import style from "./reservation.module.css";
 import car1 from"./car1.svg";
 import cars from "./cars.svg";
 import shape1 from "./Ellipse 7.svg";
+import TrainsCar from "./TrainsCar";
+import trainLine from "./trainLine.svg";
 
 export default function Reservation(){
     const [showBorder1, setShowBorder1] = useState(true);
     const [showBorder2, setShowBorder2] = useState(false);
     const [showBorder3, setShowBorder3] = useState(false);
     const [showBorder4, setShowBorder4] = useState(false);
+
+    // const [background, setBackground] = useState(false);
+    // const [color, setColor] = useState(false);
+    // const unavilableStyle = {
+    //     backgroundColor : background ? "#4D4039" : "#D6C0B8",
+    //     color : color ? "#FFFFFF" : "#4E4039"
+    // }
+
+    // const handleButtonChange = () =>{
+    //     setBackground(!background);
+    //     setColor(!color)
+    // }
 
     const style1={
         border : showBorder1 ?  '2px solid #281F1B' : 'none',
@@ -106,12 +120,68 @@ export default function Reservation(){
                 </div>
                 </div>
                 <div className={style.mainTrain__body}>
-                    <div className={style.train__car1}>
-                        <div className={style.leftsec}>
-                            <img src={shape1} alt=""  className={style.shape}/>
-                        </div>
-                        <div className={style.rightsec}></div>
+                    <div className={style.trainLines}>
+                        <img src={trainLine} alt=""/>
+                        <img src={trainLine} alt=""/>
                     </div>
+                    {showBorder1 &&
+                        <div className={style.car1}>
+                        <div className={style.train__car1}>
+                            <div className={style.leftsec}>
+                                <img src={shape1} alt=""  className={style.shape}/>
+                            </div>
+                            <div className={style.rightsec}>
+                                <div className={style.group1}>
+                                    <button className={style.seat1}>04</button>
+                                    <button className={style.seat1}>08</button>
+                                    <button className={style.seat1}>12</button>
+                                </div>
+                                <div className={style.group2}>
+                                    <button className={style.seat1}>03</button>
+                                    <button className={style.seat1}>07</button>
+                                    <button className={style.seat1}>11</button>
+                                </div>
+                                <hr/>
+                                <div className={style.group3} >
+                                    <button className={style.seat1} >02</button>
+                                    <button className={style.seat1}>06</button>
+                                    <button className={style.seat1}>10</button>
+                                </div>
+                                <div className={style.group4}>
+                                    <button className={style.seat1}> 01 </button>
+                                    <button className={style.seat1}>05</button>
+                                    <button className={style.seat1}>09</button>
+                                </div>
+                            </div>
+                        </div>
+                        <TrainsCar />
+                        <TrainsCar />
+                        </div>
+                    }
+                    {
+                        showBorder2 &&
+                        <div className={style.car2}>
+                            <TrainsCar />
+                            <TrainsCar />
+                            <TrainsCar />
+                        </div>
+                    }
+                    {
+                        showBorder3 &&
+                        <div className={style.car3}>
+                            <TrainsCar />
+                            <TrainsCar />
+                            <TrainsCar />
+                        </div>
+                    }
+                    {
+                        showBorder4 &&
+                        <div className={style.car4}>
+                            <TrainsCar />
+                            <TrainsCar />
+                            <TrainsCar />
+                        </div>
+                    }
                 </div>
             </div>
         </div>
