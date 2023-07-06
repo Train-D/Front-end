@@ -89,40 +89,42 @@
 }
 
 .right_side{
-    margin-left: -0.0625em;
+    width:65%;
     background-image: url(./rectangle.svg),url(./login.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    width:30.6834375em;
-    height: 30.34em;
-    margin-top: 0.625em; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 6.726225em  5.2028125em  7.883425em 0.3903125em;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 5%;
+    margin-top: 10px;
 }
 
 .close{
-    margin-top: -15.81557px;
-    margin-left: 253.2614px;
-    margin-right: -28.157948px;
     width:  1em;
     height:  1em;
     cursor: pointer;
+    margin: 0px;
+    margin-left: auto;
+    margin-right: 15%;
+    margin-bottom: 5%;
 }
 
 .title{
-    width:  4.49134375em;
-    height:  1.51875em;
     font-family:'Inria Serif', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.55625em;
-    line-height: 1.51875em;
+    font-size: 1.75em;
+    line-height: 22px;
     text-align: center;
     color: #FFFFFF;
-    margin-bottom: 1.1572em;
+    /* border: 1px solid black; */
+    margin: 0px;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
 .signwith_btns{
@@ -130,7 +132,9 @@
     margin-bottom: 0px;
     display: flex;
     flex-direction: column;
-    gap: 0.6875em; 
+    gap:10px;
+    /* border: 1px solid black; */
+    width: 60%;
 }
 
 .signwith_btns a{
@@ -138,139 +142,127 @@
 }
 
 .google_btn{
-    margin-top: 0px;
-    margin-bottom: 0px;
+    width: 100%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.889375em;
-    width: 13.7853125em;
-    height: 1.8em;
     background-color: #FFFFFF;
     border: 1px solid #FFFFFF;
-    border-radius:0.875em;
+    border-radius: 14px;
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 20%;
+    padding-right: 10%;
 }
 
 .googleIcon{
-    margin-left: 1.28959375em;
-    margin-top: 0.3034em;
-    margin-bottom:  0.303125em;
-    width: 1.11171875em;
-    height: 1em;
-    border-radius: 0px 0.875em 0.875em 0px;
+    width: 13%;
+    border-radius: 0px 14px 14px 0px;
 }
 
 .sign_withgoogle{
-    margin-top: 0.6em;
-    margin-bottom: 0.3254625em;
-    /*margin-right: 54px;*/
-    width: 9.875em;
-    height: 1em;
     font-family:'Inria Serif', serif;
     font-style: normal;
     font-weight: 400;
-    font-size:  0.84490625em;
-    line-height:0.8317375em;
+    font-size: 1.1em;
+    line-height: 1em;
     text-align: center;
     text-transform: capitalize;
     color:  #41312A;
 }
 
 .facebook_btn{
-    margin-top: 0px;
-    margin-bottom: 0px;
+    width: 100%;
     cursor: pointer;
     display: flex;
+    gap: 5%;
     align-items: center;
-    gap:0.93384375em;
-    width: 13.7853125em;
-    height: 1.8em;
     background-color: #1562C7;
     border: 1px solid #1562C7;
     border-radius: 14px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 20%;
+    padding-right: 10%;
 }
 
 .facebookIcon{
-    margin-left: 1.28959375em;
-    margin-top:0.26977225em;
-    margin-bottom:  0.370625em;
-    width: 1.11171875em;
-    height: 1em;
-    border-radius: 0px 0.875em 14px 0.875em;
+    width: 13%;
+    border-radius: 0px 14px 14px 0px;
 }
 
 .sign_withface{
-    margin-top:0.6em;
-    margin-bottom: 0.344375em;
-        /*margin-right: 54px;*/
-    width: 9.875em;
-    height: 1em;
     font-family:'Inria Serif', serif;
     font-style: normal;
     font-weight: 400;
-    font-size:  0.84490625em;
-    line-height:  0.83125em;
+    font-size: 1.1em;
+    line-height: 1em;
     text-align: center;
     text-transform: capitalize;
     color:  #FFFFFF;
 }
 
 .or{
-    margin-top: 0.625em;
     display: flex;
-    gap: 0.375em;
-    width: 12.4375em;
-    margin-bottom: 0px;
+    align-items: center;
+    gap: 5%;
+    /* border: 1px solid; */
+    width: 60%;
+    margin-top: 2%;
 }
 
 .or hr{
-    width: 5.33625em;
+    width: 48%;
     height: 0px;
     border: 1px solid #FFFFFF;
-    margin-bottom: 0px;
 }
 
 .or span{
-    width: 0.9375em;
-    height: 0.795em;
     font-family: 'Inria Serif', serif;
     font-style: normal;
-    font-size: 0.8125em;
+    font-size: 1em;
     font-weight: 700;
-    line-height: 0.795em;
+    line-height: 1em;
     text-align: center;
     text-transform: capitalize;
     color: rgba(255, 255, 255, 0.90);
 }
 
 .form{
-    margin-top:  1.2656875em;
+   /* margin-top: 27.19px; */
     margin-bottom: 0px;
+   /* border: 1px solid black; */
+    width: 80%;
+    padding: 0px;
+    margin-top: 5%;
 }
 
 .sign_form{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 
 .username, .password{
-    margin-bottom:0.97625em;
     background-color: rgba(217, 217, 217, 0.91);
     border: 1px solid rgba(217, 217, 217, 0.91);
     border-radius: 14px;
-    width: 20.27775em;
-    height: 1.518825em;
-    padding:  1.209125em  0.334125em  1.209125em 0.646625em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    margin: 0px;
+    margin-bottom: 5%;
 }
 
 .username ::placeholder{
-    width: 2.1328125em;
-    height: 0.835em;
     font-family: 'Inria Serif', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 0.8em;
-    line-height: 0.775em;
+    font-size: 0.75em;
+    line-height: 22px;
     color: rgba(72, 71, 71, 0.88);
 }
 
@@ -281,13 +273,11 @@
 }
 
 .password ::placeholder{
-    width: 3.51303125em;
-    height: 0.835em;
     font-family: 'Inria Serif', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 0.8em;
-    line-height: 0.775em;
+    font-size: 0.75em;
+    line-height: 22px;
     color: rgba(72, 71, 71, 0.88);
 }
 
@@ -298,28 +288,27 @@
 }
 
 .sign_btn{
-    margin-top: 15.7895px;
+    margin: 0px;
+    width: 30%;
     cursor: pointer;
-    width: 5.91375em;
-    height: 1.59115em;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #41312A;
     border: 1px solid #41312A;
     border-radius: 14px;
-    padding:  0.361625em 1.64534375em 0.361625em 1.64534375em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
 }
 
 .login{
-    /*margin-left: auto;*/
     text-align: center;
-    width: 3.375em;
-    height: 0.8675em;
     font-family: 'Inria Serif', serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 0.889375em;
-    line-height: 0.8679em;
+    font-size: 1.25em;
+    line-height: 22px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -331,8 +320,9 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    width: 18px;
-    height: 15px;
-    margin-left: 85%;
-    margin-top: -13.5%;
+    margin-left: auto;
+    margin-top: -11.5%;
+    margin-right:5%;
+    position: relative;
+    z-index: 1;
 }

@@ -6,18 +6,52 @@ import facebookIcon from"./logos_facebook.svg";
 import logoIcon from"./logo.svg";
 import visibleIcon from"./visible.svg";
 import close from"./Vector.svg";
+import Forget from "../forget/Forget";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../Context/TripContext";
 
 export default function Login(props){
+    
+    const [openForgetScreen, setOpenForgetScreen] = useState(false)
+    const {setToken} = useContext(Context);
+    const [loginData, setLoginData] = useState({
+        username:"",
+        password:""
+    })
 
-    const handleLogin = (e) =>{
+    console.log(props.data);
+
+    // console.log(loginData.username)
+    // console.log(loginData.password)
+
+    function handleChange(event){
+        const{name, value} = event.target;
+        setLoginData(prev => ({...prev, [name]: value}))
+    }
+    const handleLogin = async(e) =>{
         e.preventDefault();
+        fetch('https://traind.azurewebsites.net/api/User/Login',{
+            method: 'POST',
+            headers:{
+                'Content-Type' : 'application/json',
+                'Accept' : 'application/json',
+            },
+            body : JSON.stringify(loginData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            const token = data.token;
+            const message = data.message;
+            setToken(token)
+            localStorage.setItem("toke", token)
+            console.log(token)
+            console.log(message)
+        })
+        .catch(error => console.error(error))
     }
 
     const [passwordShown, setPasswordShown] = useState(false);
-
-    const toggleShoownPassword =()=>{
-        setPasswordShown(!passwordShown)
-    }
 
     return(props.trigger) ? (
         <div className={styleLogin.loginPage}>
@@ -53,21 +87,31 @@ export default function Login(props){
                 </div>
                 <div className={styleLogin.form}>
                     <form className={styleLogin.sign_form} onSubmit={handleLogin}>
-                        <input type="text" name="name" className={styleLogin.username} placeholder="Name" />
+                        <input 
+                        type="text" 
+                        name="username"
+                        value={loginData.username}
+                        onChange={handleChange}
+                        className={styleLogin.username} 
+                        placeholder="Name" />
                         <input type={passwordShown ? "text" : "password" } 
-                            name="password" 
+                            name="password"
+                            passWordValue={loginData.password}
+                            onChange={handleChange}
                             className={styleLogin.password} 
-                            placeholder="Password"/>
-                        <button  
-                            className={styleLogin.visibleBtn} 
-                            onClick={toggleShoownPassword}>
-                            <img src={visibleIcon} alt=""/>
-                        </button>
+                            placeholder="Password"
+                        />
+                            <button 
+                            onClick={() => setOpenForgetScreen(true)}
+                            style={{border:"0px", color:"#FFFFFF", fontSize:"16px", fontWeight:"700", lineHeight:"normal", fontFamily:"'Inria Serif', serif", cursor:"pointer", backgroundColor:"transparent", marginLeft:"55%" }}>
+                                Forget Password
+                            </button>
                         <button type="submit" className={styleLogin.sign_btn}><span className={styleLogin.login}>LOGIN</span></button>
                     </form>
                 </div>
             </div>
         </div>
+        <Forget trigger={openForgetScreen} setTrigger={setOpenForgetScreen} />
         </div>
     ) : "";
 }

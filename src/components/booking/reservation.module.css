@@ -107,7 +107,7 @@
     background-image: url("./\(1\).svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 32%;
+    width: 30%;
     /* border:1px solid black; */
     display: flex;
     gap: 3%;
@@ -171,4 +171,55 @@ hr{
     flex-direction: column;
     gap: 40px;
     margin-bottom: -13%;
+}
+.train__cars{
+    background-image: url("./Group\ 284.svg");
+    background-repeat: no-repeat;
+    background-size:100%;
+    width: 35%;
+    display: flex;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.firstClass{
+    background-image: url("./Group\ 283.svg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    border:'1px solid black';
+    width: 35%;
+    display: flex;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.cars__seats{
+    width: 80%;
+}
+.seatsGroups{
+    display: flex;
+    gap: 5%;
+    margin: 0px;
+    margin-top: 3px;
+}
+.group1 button, .group2 button, .group3 button, .group4 button{
+    width: 100%;
+    height: 100%;
+    background-color: #D6C0B8;
+    border: 1px solid rgba(94,59,32,0.5);
+    border-radius: 10px;
+    color: #4D4039;
+    font-family: 'Inria Serif', serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    cursor: pointer;
+}
+hr{
+    color:#FFFFFF;
+    border: 1px solid #FFFFFF;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

@@ -15,7 +15,7 @@ export default function Contact(){
                 <div className={style.navbar__container}>
                     <Navbar/>
                 </div>
-               
+
                 <h1 className={style.title}> Contact Us 
                     <span>We love hearing from our customers! If you have any questions, suggestions, or feedback, Please feel free to get in touch.</span>
                 </h1>

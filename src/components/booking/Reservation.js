@@ -1,29 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import style from "./reservation.module.css";
 import car1 from"./car1.svg";
 import cars from "./cars.svg";
 import shape1 from "./Ellipse 7.svg";
 import TrainsCar from "./TrainsCar";
+import car from "./Group 283.svg"
 import trainLine from "./trainLine.svg";
+import { Context } from "../../Context/TripContext";
+import axios from "axios";
 
 export default function Reservation(){
+    
+    const {imageUrl} = `${car}`
+    const {setSelectedSeat} =useContext(Context);
+    const {selectedTripId, date, token} = useContext(Context);
+    console.log(selectedTripId)
+    console.log(date)
+
+    const [classes, setClasses] = useState([]);
+    const [seats, setSeats] = useState([]);
+
+    const trainData = {
+        tripId: selectedTripId,
+        date: date,
+    };
+
+    useEffect(() =>{
+        const fetchData = async () =>{
+            try{
+                const response = await fetch("https://traind.azurewebsites.net/api/Trips/TrainInfo",{
+                    method: 'POST',
+                    headers:{
+                        'Content-Type' : 'application/json',
+                        'Accept' : 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(trainData)
+                });
+                const responseData = await response.json();
+                setClasses(responseData.classes);
+                setSeats(responseData.seats)
+                console.log(responseData.classes)
+                console.log(responseData.seats)
+
+            }catch(error){
+                console.error(error)
+            }
+        }
+        fetchData();
+    },[])
+    
+    console.log(classes)
+    console.log(seats)
+    
     const [showBorder1, setShowBorder1] = useState(true);
     const [showBorder2, setShowBorder2] = useState(false);
     const [showBorder3, setShowBorder3] = useState(false);
     const [showBorder4, setShowBorder4] = useState(false);
 
-    // const [background, setBackground] = useState(false);
-    // const [color, setColor] = useState(false);
-    // const unavilableStyle = {
-    //     backgroundColor : background ? "#4D4039" : "#D6C0B8",
-    //     color : color ? "#FFFFFF" : "#4E4039"
-    // }
-
-    // const handleButtonChange = () =>{
-    //     setBackground(!background);
-    //     setColor(!color)
-    // }
-
+    const [car1Bg, setCar1Bg] = useState(true)
+    
     const style1={
         border : showBorder1 ?  '2px solid #281F1B' : 'none',
     }
@@ -38,6 +74,7 @@ export default function Reservation(){
     }
 
     const handleBorder1 = () =>{
+        setCar1Bg(true)
         setShowBorder1(true);
         setShowBorder2(false);
         setShowBorder3(false);
@@ -49,6 +86,7 @@ export default function Reservation(){
         setShowBorder2(true);
         setShowBorder3(false);
         setShowBorder4(false);
+        setCar1Bg(false);
         console.log(true)
     }
     const handleBorder3 = () =>{
@@ -56,6 +94,7 @@ export default function Reservation(){
         setShowBorder2(false);
         setShowBorder3(true);
         setShowBorder4(false);
+        setCar1Bg(false);
         console.log(true)
     }
     const handleBorder4 = () =>{
@@ -63,8 +102,14 @@ export default function Reservation(){
         setShowBorder2(false);
         setShowBorder3(false);
         setShowBorder4(true);
+        setCar1Bg(false);
         console.log(true)
     }
+
+
+    const handleSeatClick = (seat) => {
+        setSelectedSeat(seat);
+    };
 
     return(
         <div className={style.reservation__container}>
@@ -124,64 +169,180 @@ export default function Reservation(){
                         <img src={trainLine} alt=""/>
                         <img src={trainLine} alt=""/>
                     </div>
-                    {showBorder1 &&
-                        <div className={style.car1}>
-                        <div className={style.train__car1}>
-                            <div className={style.leftsec}>
-                                <img src={shape1} alt=""  className={style.shape}/>
-                            </div>
-                            <div className={style.rightsec}>
-                                <div className={style.group1}>
-                                    <button className={style.seat1}>04</button>
-                                    <button className={style.seat1}>08</button>
-                                    <button className={style.seat1}>12</button>
+                    {
+                    showBorder1 &&
+                    classes.filter(classItem => classItem.className === "A").map(classItem => (
+                        <div key={classItem.className} style={{display:"flex", paddingTop:"1%", paddingBottom:"1%", paddingLeft:"0%", width:"100%", gap:"0%"}}>
+                            {[...Array(classItem.coaches)].map((_, index) => (
+                                <div key={`coach-${index + 1}`} className={`${style.train__cars} ${classItem.className === "A" && index === 0 ? style.firstClass : ""}`} style={{width:"35%", marginLeft:"auto", marginRight:"auto"}}>
+                                    {[...Array(classItem.numberOfSeatsCoach / 4)].map((_, seatGroupIndex) => (
+                                        <div key={`seat-group-${seatGroupIndex + 1}`} style={{display: "flex", gap: "6px", flexDirection: "column", margin:"0px", marginTop:"0px", marginLeft:"11%" }}>
+                                            {[...Array(4)].map((_, seatIndex) => {
+                                                   const seatNumber = seatGroupIndex * 4 + seatIndex + 1;
+                                                const isSeatReserved =
+                                                    seats.some(seat =>
+                                                    seat.coach === index + 1 &&
+                                                    seat.class === classItem.className &&
+                                                    seat.seatNumber === seatNumber);
+                                                return (
+                                                    <button
+                                                        key={`seat-${seatNumber}`}
+                                                        disabled={isSeatReserved}
+                                                        onClick={() => handleSeatClick({
+                                                            seatNumber,
+                                                            coach: index + 1,
+                                                            class: classItem.className,
+                                                            price: classItem.classPrice,
+                                                        })}
+                                                        style={{
+                                                            backgroundColor: seats.some(seat =>
+                                                                seat.coach === index + 1 &&
+                                                                seat.class === classItem.className &&
+                                                                seat.seatNumber === seatNumber
+                                                            ) ? "#4D4039" : "#D6C0B8",
+                                                            color: seats.some(seat =>
+                                                                seat.coach === index + 1 &&
+                                                                seat.class === classItem.className &&
+                                                                seat.seatNumber === seatNumber
+                                                            ) ? "#D6C0B8" : "#4D4039",
+                                                            border: "1px solid rgba(94,59,32,0.5)",
+                                                            borderRadius: "10px",
+                                                            fontFamily: "'Inria Serif', serif",
+                                                            fontStyle: "normal",
+                                                            fontSize: "18px",
+                                                            fontWeight: "400",
+                                                            lineHeight: "22px",
+                                                            cursor: "pointer",
+                                                            marginTop: "0px",
+                                                            width:"105%",
+                                                            height:"100",
+                                                        }}>
+                                                        {seatNumber < 10 ? `0${seatNumber}` : seatNumber}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    ))}
                                 </div>
-                                <div className={style.group2}>
-                                    <button className={style.seat1}>03</button>
-                                    <button className={style.seat1}>07</button>
-                                    <button className={style.seat1}>11</button>
-                                </div>
-                                <hr/>
-                                <div className={style.group3} >
-                                    <button className={style.seat1} >02</button>
-                                    <button className={style.seat1}>06</button>
-                                    <button className={style.seat1}>10</button>
-                                </div>
-                                <div className={style.group4}>
-                                    <button className={style.seat1}> 01 </button>
-                                    <button className={style.seat1}>05</button>
-                                    <button className={style.seat1}>09</button>
-                                </div>
-                            </div>
+                            ))}
                         </div>
-                        <TrainsCar />
-                        <TrainsCar />
-                        </div>
-                    }
+                    ))}
                     {
                         showBorder2 &&
-                        <div className={style.car2}>
-                            <TrainsCar />
-                            <TrainsCar />
-                            <TrainsCar />
-                        </div>
-                    }
+                        classes.filter(classItem => classItem.className === "B").map(classItem => (
+                            <div key={classItem.className} style={{display:"flex", paddingTop:"1%", paddingBottom:"1%", paddingLeft:"0%", width:"100%", gap:"0%"}}>
+                            {[...Array(classItem.coaches)].map((_, index) => (
+                                <div key={`coach-${index + 1}`}  className={style.train__cars} style={{width:"35%", marginLeft:"auto", marginRight:"auto"}}>
+                                {[...Array(classItem.numberOfSeatsCoach / 4)].map((_, seatGroupIndex) => (
+                                <div key={`seat-group-${seatGroupIndex + 1}`} style={{ display: "flex", gap: "6px", flexDirection: "column", margin:"0px", marginTop:"0px", marginLeft:"10px" }}>
+                                    {[...Array(4)].map((_, seatIndex) => {
+                                        const seatNumber = seatGroupIndex * 4 + seatIndex + 1;
+                                        const isSeatReserved =
+                                        seats.some(seat =>
+                                        seat.coach === index + 1 &&
+                                        seat.class === classItem.className &&
+                                        seat.seatNumber === seatNumber);
+                                        return (
+                                            <button
+                                            key={`seat-${seatNumber}`}
+                                            disabled={isSeatReserved}
+                                            onClick={() => handleSeatClick({
+                                            seatNumber,
+                                            coach: index + 1,
+                                            class: classItem.className,
+                                            price: classItem.classPrice,
+                                        })}
+                                            style={{
+                                            backgroundColor: seats.some(seat =>
+                                            seat.coach === index + 1 &&
+                                            seat.class === classItem.className &&
+                                            seat.seatNumber === seatNumber
+                                            ) ? "#4D4039" : "#D6C0B8",
+                                            color: seats.some(seat =>
+                                            seat.coach === index + 1 &&
+                                            seat.class === classItem.className &&
+                                            seat.seatNumber === seatNumber
+                                            ) ? "#D6C0B8" : "#4D4039",
+                                            border: "1px solid rgba(94,59,32,0.5)",
+                                            borderRadius: "10px",
+                                            fontFamily: "'Inria Serif', serif",
+                                            fontStyle: "normal",
+                                            fontSize: "18px",
+                                            fontWeight: "400",
+                                            lineHeight: "22px",
+                                            cursor: "pointer",
+                                            marginTop: "0px",
+                                            width:"105%",
+                                            height:"100",
+                                            }}>
+                                            {seatNumber < 10 ? `0${seatNumber}` : seatNumber}
+                                            </button>
+                                            );
+                                            })}
+                                        </div>
+                                        ))}
+                                </div>
+                                ))}
+                            </div>
+                        ))}
                     {
                         showBorder3 &&
-                        <div className={style.car3}>
-                            <TrainsCar />
-                            <TrainsCar />
-                            <TrainsCar />
-                        </div>
-                    }
-                    {
-                        showBorder4 &&
-                        <div className={style.car4}>
-                            <TrainsCar />
-                            <TrainsCar />
-                            <TrainsCar />
-                        </div>
-                    }
+                        classes.filter(classItem => classItem.className === "C").map(classItem => (
+                            <div key={classItem.className} style={{display:"flex", paddingTop:"1%", paddingBottom:"1%", paddingLeft:"0%", width:"100%", gap:"2%"}}>
+                            {[...Array(classItem.coaches)].map((_, index) => (
+                                <div key={`coach-${index + 1}`}  className={style.train__cars}>
+                                {[...Array(classItem.numberOfSeatsCoach / 4)].map((_, seatGroupIndex) => (
+                                <div key={`seat-group-${seatGroupIndex + 1}`} style={{ display: "flex", gap: "5px", flexDirection: "column", margin:"0px", marginTop:"-7px", marginLeft:"5px" }}>
+                                    {[...Array(4)].map((_, seatIndex) => {
+                                        const seatNumber = seatGroupIndex * 4 + seatIndex + 1;
+                                        const isSeatReserved =
+                                        seats.some(seat =>
+                                        seat.coach === index + 1 &&
+                                        seat.class === classItem.className &&
+                                        seat.seatNumber === seatNumber);
+                                        return (
+                                            <button
+                                            key={`seat-${seatNumber}`}
+                                            disabled={isSeatReserved}
+                                            onClick={() => handleSeatClick({
+                                            seatNumber,
+                                            coach: index + 1,
+                                            class: classItem.className,
+                                            price: classItem.classPrice,
+                                        })}
+                                            style={{
+                                            backgroundColor: seats.some(seat =>
+                                            seat.coach === index + 1 &&
+                                            seat.class === classItem.className &&
+                                            seat.seatNumber === seatNumber
+                                            ) ? "#4D4039" : "#D6C0B8",
+                                            color: seats.some(seat =>
+                                            seat.coach === index + 1 &&
+                                            seat.class === classItem.className &&
+                                            seat.seatNumber === seatNumber
+                                            ) ? "#D6C0B8" : "#4D4039",
+                                            border: "1px solid rgba(94,59,32,0.5)",
+                                            borderRadius: "10px",
+                                            fontFamily: "'Inria Serif', serif",
+                                            fontStyle: "normal",
+                                            fontSize: "18px",
+                                            fontWeight: "400",
+                                            lineHeight: "22px",
+                                            cursor: "pointer",
+                                            marginTop: "0px",
+                                            width:"105%",
+                                            height:"100",
+                                            }}>
+                                            {seatNumber < 10 ? `0${seatNumber}` : seatNumber}
+                                            </button>
+                                            );
+                                            })}
+                                        </div>
+                                        ))}
+                                </div>
+                                ))}
+                            </div>
+                        ))}
                 </div>
             </div>
         </div>

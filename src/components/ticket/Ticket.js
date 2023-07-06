@@ -1,4 +1,6 @@
 import React from "react";
+import { useContext } from "react";
+import { Context } from "../../Context/TripContext";
 import style from "./ticket.module.css";
 import logoIcon from "./logo.svg";
 import saveIcon from "./saveIcon.svg";
@@ -8,6 +10,9 @@ import QRCode from "./QR Code.svg";
 import close from "./close.svg";
 
 export default function Ticket(props){
+    
+    const {selectedTripId, date, creditCardData, selectedSeat} = useContext(Context); 
+    
     return(props.trigger) ? (
         <div className={style.ticketPage}>
             <button className={style.close_btn} onClick={() =>props.setTrigger(false)}>
@@ -38,31 +43,31 @@ export default function Ticket(props){
                 </div>
                 <div className={style.to}>
                     <span>To</span>
-                    <h1 className={style.to__time}>10:50 AM</h1>
+                    <h1 className={style.to__time}>10:50 Am</h1>
                 </div>
             </div>
             <div className={style.id__container}>
-                <h1>ID Number</h1>
+                <h1>{selectedTripId}</h1>
             </div>
             <div className={style.data}>
                 <div className={style.userData}>
                     <span>Passenger</span>
-                    <span className={style.userName} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}}>Yasmeen</span>
+                    <span className={style.userName} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}}>{creditCardData.name}</span>
                 </div>
                 <div className={style.dateData}>
                     <span>Date</span>
-                    <span className={style.date} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}}>13/10/2023</span>
+                    <span className={style.date} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}}>{date}</span>
                 </div>
             </div>
             <div className={style.seatData}>
                 <span>Seat</span>
-                <span className={style.seat__Number} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}}>A2-2</span>
+                <span className={style.seat__Number} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}}>{selectedSeat.class}{selectedSeat.coach}-{selectedSeat.seatNumber}</span>
             </div>
             <img src={lines} alt="" className={style.lines}/>
             <div className={style.ticketinfo}>
                 <div className={style.ticket__price}>
                     <span>Price:</span>
-                    <span className={style.price} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}} >34.5 EGP</span>
+                    <span className={style.price} style={{fontWeight:"400", color:"rgba(255,255,255,0.87)"}} > {selectedSeat.price} </span>
                 </div>
                 <img src={QRCode} alt="" className={style.QRcode} />
             </div>
