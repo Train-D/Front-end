@@ -13,7 +13,7 @@ export default function StationDetails() {
             .then((data) => setStation(data));
     }, [stationName]);
 
-   
+
     return (
         <div className={style.detials}>
             <div className={style.navbar__container}>
@@ -30,7 +30,7 @@ export default function StationDetails() {
                                 <h1> {station.stationName} Station</h1>
                             </div>
                             <div className={style.station_info}>
-                            {station.stationInfo}
+                                {station.stationInfo}
 
                             </div>
 
