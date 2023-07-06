@@ -1,34 +1,54 @@
-import React from "react";
-//import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import style from "./SearchBar.module.css";
+import { Link } from "react-router-dom";
 
-import style from"./SearchBar.module.css";
+function SearchBar() {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [data, setData] = useState({});
 
-export const SearchBar = ()=>{
-  /*  const [input, setInput]=useState("");
-
-    const fetchData =(value)=>{
+    useEffect(() => {
         fetch("https://traind.azurewebsites.net/api/Stations")
-        .then((response)=>response.json())
-        .then((json) => {console.log(json);
-        })
+            .then((response) => response.json())
+            .then((data) => setData(data));
+    }, []);
+
+    const filteredData = Object.entries(data).reduce((acc, [key, value]) => {
+        const filteredValues = value.filter((v) =>
+            v.toLowerCase().startsWith(searchTerm.toLowerCase())
+        );
+        if (filteredValues.length > 0) {
+            acc[key] = filteredValues;
+        }
+        return acc;
+    }, {});
+
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
     };
 
-    const handleChange=(value)=>{
-        setInput(value)
-        fetchData(value)
-    }
-    <input placeholder="Enter station name"
-             className={style.search}
-             value={input}
-             onChange={(e)=>handleChange(e.target.value)}
-             />
-    */
-    return(
-        <div className={style.searchbar}>
-            <input placeholder="Enter station name"
-             className={style.search}
-             />
+    return (
+        <div className={style.rightpart}>
+            <div className={style.searchbar}>
+                <input type="text" className={style.search} placeholder="Enter station name" value={searchTerm} onChange={handleSearch} />
+                <div className={style.searchresult}>
+                    {Object.entries(filteredData).map(([key, value]) => (
+                        <div key={key}>
+                            <h2>{key}</h2>
+                            <ul>
+                                {value.map((item) => (
+                                    <li key={item}>
+                                        <Link className={style.link} to={`/stationdetails/${item}`}>{item}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+
+                    ))}
+                </div>
+            </div>
         </div>
-    )
-    
+    );
 }
+
+export default SearchBar;

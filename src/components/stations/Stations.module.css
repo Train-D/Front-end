@@ -50,20 +50,10 @@ width: 100%;
     color: #FFFFFF; 
 }
 
-.rightpart{
-    height:500px;
-    width: 600px;
-    background-color: #76655D;
-    border-radius: 20px;
-    margin-right: 4%;
-    margin-bottom: 4%;
-    margin-top: 4%;
-    flex-direction: column;
-}
+
 
 /*tabletMode*/
 @media only screen and (min-width:501px) and (max-width:1000px){
-   
     
 }
 

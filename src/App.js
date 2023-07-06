@@ -13,6 +13,9 @@ import Contact from "./components/contact/Contact";
 import SearchPage from "./components/search/SearchPage";
 import MainFooter from "./components/Footer/MainFooter";
 import "./App.css";
+import StationDetails from "./components/stations/StationDetails";
+import SearchBar from "./components/stations/SearchBar";
+import Profile from "./components/profile/Profile";
 
 // export default function App(){
 //   return(
@@ -39,6 +42,10 @@ export default function App(){
                     <Route path="/stations" element={<Stations />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/search" element={<SearchPage />} />
+                    <Route path="/" element={<SearchBar />} />
+                    <Route path="/stationdetails/:stationName" element={<StationDetails />} />
+                    <Route path="/profile" element={<Profile />} />
+                    
                 </Routes>
             </BrowserRouter>
             <MainFooter />
