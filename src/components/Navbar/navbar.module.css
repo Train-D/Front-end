@@ -6,6 +6,7 @@
     margin-top: -17px;
     display:flex;
 }
+
 .nav_list{
     padding: 0px;
     width: 100%;
@@ -95,4 +96,8 @@
     font-size: 12.8px;
     letter-spacing: -0.408px;
     color: #FFFFFF;
+}
+.profile{
+    margin-top: 0.991rem;
+    margin-right: 2%;
 }

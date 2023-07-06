@@ -30,8 +30,8 @@ export default function Section1(){
                 <Navbar/>
                 <h1 className={sec1Style.title}>With Just A Few Clicks <span>You Can Easily Book Your Tickets</span></h1>
                 <div className={sec1Style.buttons}>
-                    <button className={sec1Style.book_btn}><span>BOOK NOW</span></button>
-                    <button className={sec1Style.about_btn}><span><Link to="/about" style={{textDecoration:"none", color:"#FFFFFF"}} > ABOUT</Link></span></button>
+                    <button style={{textAlign :"center"}} className={sec1Style.book_btn}><span>BOOK NOW</span></button>
+                    <button style={{textAlign :"center"}} className={sec1Style.about_btn}><span><Link to="/about" style={{textDecoration:"none", color:"#FFFFFF"}} > ABOUT</Link></span></button>
                 </div>
             </div>
         </div>
