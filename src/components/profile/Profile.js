@@ -89,7 +89,7 @@ export default function Profile() {
                     <p style={{ textAlign: "center" }}>You can book tickets</p>
                     <hr />
                     <div style={{ textAlign: "center" }}>
-                        <button className={profStyle.book_btn}><span><Link to="/book" style={{ textDecoration: "none", color: "#FFFFFF" }} > BOOK NOW</Link></span></button>
+                        <button className={profStyle.book_btn}><span><Link to="/search" style={{ textDecoration: "none", color: "#FFFFFF" }} > BOOK NOW</Link></span></button>
                     </div>
                     <div className={profStyle.or}>
                         <hr />

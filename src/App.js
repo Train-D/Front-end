@@ -51,25 +51,13 @@ export default function App(){
           <Route path="/reset" element={<ResetPassword/>}/>
           <Route path="reservation" element={<Reservation/>} />
           <Route path="/forget" element={<Forget/>} />
+          <Route path="/" element={<SearchBar />} />
+          <Route path="/stationdetails/:stationName" element={<StationDetails />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
         <MainFooter />
       </AllContextProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<AboutUs />} />
-                    <Route path="/book" element={<Book />} />
-                    <Route path="/stations" element={<Stations />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/search" element={<SearchPage />} />
-                    <Route path="/" element={<SearchBar />} />
-                    <Route path="/stationdetails/:stationName" element={<StationDetails />} />
-                    <Route path="/profile" element={<Profile />} />
-                    
-                </Routes>
-            </BrowserRouter>
-            <MainFooter />
         </div>
   )
 }

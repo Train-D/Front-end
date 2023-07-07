@@ -13,7 +13,7 @@ export default function Book(){
     const [customer, setCustomer] = useState({})
     const [payment, setPayment] = useState({})
     const [ticket, setTicket] = useState({})
-    const {selectedTripId, date, creditCardData, selectedSeat, token} = useContext(Context);
+    const {selectedTripId, date, creditCardData, selectedSeat, token} = useContext(Context) ;
     // const {creditData} = useContext(CreditDataContext);
     console.log(selectedSeat)
     console.log(selectedTripId)
