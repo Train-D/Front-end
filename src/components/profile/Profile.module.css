@@ -237,7 +237,11 @@ button:hover {
     padding-right: 0%;
     gap: calc(100%/4);
 }
-
+.ticketview button{
+    background:none;
+    border: none;
+    color: #eeeeee;
+}
 .book {
     width: 30%;
     height: 100%;

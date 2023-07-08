@@ -27,7 +27,7 @@ export default function Navbar(){
                         </li>
                         <li>
                             {/* <a href="/">BOOKING</a> */}
-                            <Link to="/book">BOOKING</Link>
+                            <Link to="/search">BOOKING</Link>
                         </li>
                         <li>
                             {/* <a href="/">STATIONS</a> */}

@@ -21,6 +21,7 @@ import Forget from "./components/forget/Forget";
 import StationDetails from "./components/stations/StationDetails";
 import SearchBar from "./components/stations/SearchBar";
 import Profile from "./components/profile/Profile";
+import Sign from "./components/sign/Sign";
 
 // export default function App(){
 //   return(
@@ -37,8 +38,10 @@ import Profile from "./components/profile/Profile";
 // }
 
 export default function App(){
+  const [user, setUserData] = useState(null);
   return(
     <div className="App">
+      {user ? <Profile user={user} /> : <Sign setUser={setUserData} />}
       <AllContextProvider>
       <BrowserRouter>
         <Routes>
@@ -54,6 +57,7 @@ export default function App(){
           <Route path="/" element={<SearchBar />} />
           <Route path="/stationdetails/:stationName" element={<StationDetails />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/station-details" element={<Stations />} />
         </Routes>
       </BrowserRouter>
         <MainFooter />

@@ -5,6 +5,7 @@ import Reservation from "./Reservation";
 import Payment from "./Payment";
 import Ticket from "../ticket/Ticket";
 import { Context } from "../../Context/TripContext";
+import ButtonContext from './ButtonContext';
 
 
 export default function Book(){
@@ -139,7 +140,12 @@ export default function Book(){
                     <div className={style.price}>
                         <span>Price:</span>
                     </div>
-                    <button className={style.book_btn }  onClick={handleSubmit}>Book</button>
+                    <ButtonContext.Provider value={{ handleSubmit, openTicket }}>
+                        
+                        <button className={style.book_btn } onClick={handleSubmit}>Book</button>
+                        
+                        </ButtonContext.Provider>
+                    
                 </div>
             </div>
             <Ticket trigger={openTicket} setTrigger={setOpenTicket} />
