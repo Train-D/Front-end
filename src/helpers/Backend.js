@@ -42,3 +42,37 @@ export async function POST(endpoint, body){
         }
     }
 }
+
+export async function GET(endpoint) {
+    try {
+    var expiryDate = localStorage.getItem("tokenExpiry")
+  
+    const response = await fetch(`${url}/${endpoint}`, {
+        headers: getHeaders(),
+    });
+  
+      var responseBody = null;
+  
+      if (response.status !== 204) {
+        responseBody = response.data;
+      }
+  
+      if (response.status >= 200 && response.status < 300) {
+        return {
+          isError: false,
+          body: responseBody,
+        };
+      } else {
+        return {
+          isError: true,
+          body: responseBody,
+        };
+      }
+  
+    } catch (error) {
+      return {
+        isError: true,
+        body: error,
+      };
+    }
+  }
