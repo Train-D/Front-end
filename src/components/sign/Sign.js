@@ -7,15 +7,30 @@ import facebookIcon from"./logos_facebook.svg";
 import logoIcon from"./logo.svg";
 import close from"./Vector.svg";
 import visibleIcon from"./visible.svg";
+import { useContext } from "react";
+import { Context } from "../../Context/TripContext";
+import PopUpMessage from "../popUpMssg/popUpMssg";
 
 export default function Sign(props){
     const [openLogin, setOpenLogin] = useState(false);
 
-    // const handleSubmit = () =>{
-    //     setOpenLogin(true)
-    //     console.log(firstName, lastName, email, password)
-    // }
+    const{successMessage, setSuccessMessage, errorMessage, setErrorMessage} = useContext(Context)
+    
+    const style = {
+        display : openLogin ? "none" : "flex"
+    }
 
+    const handleOpen = () =>{
+        setOpenLogin(true)
+    }
+    // const [successMessage, setSuccessMessage] = useState('');
+    // const [errorMessage, setErrorMessage] = useState('')
+
+    const handleCloseMessage = () =>{
+        setSuccessMessage('');
+        setErrorMessage('');
+    }
+    
     const [userData,setUserData] = useState({
         firstName: '',
         lastName: '',
@@ -35,6 +50,8 @@ export default function Sign(props){
             },
             body : JSON.stringify(userData)
         });
+        
+        
         if(response.ok){
             const data = await response.json();
             console.log(`${JSON.stringify(data)}`)
@@ -43,8 +60,13 @@ export default function Sign(props){
             localStorage.setItem('email', userData.email)
             localStorage.setItem('password', userData.password)
             localStorage.setItem('userName', userData.userName)
+            setSuccessMessage(data)
+            setErrorMessage('')
         }
         else{
+            const errorData = await response.json();
+            setErrorMessage(errorData.message)
+            setSuccessMessage('')
             console.error(`${response.status} ${response.statusText}`)
         }
 
@@ -66,7 +88,7 @@ export default function Sign(props){
 
     return(props.trigger) ? (
         <div>
-            <div className={styleSign.signPage}>
+            <div className={styleSign.signPage} style={style}>
                 <div className={styleSign.sign_container}>
             <div className={styleSign.left_side}>
                 <div className={styleSign.sidecotent}>
@@ -83,12 +105,6 @@ export default function Sign(props){
                         <button className={styleSign.google_btn}>
                             <img alt="" src={googleIcon} className={styleSign.googleIcon}/>
                             <span className={styleSign.sign_withgoogle}>Sign Up With Google</span>
-                        </button>
-                    </a>
-                    <a href="/">
-                        <button className={styleSign.facebook_btn}>
-                            <img alt="" src={facebookIcon} className={styleSign.facebookIcon}/>
-                            <span  className={styleSign.sign_withface}>Sign Up With Facebook</span>
                         </button>
                     </a>
                 </div>
@@ -152,7 +168,16 @@ export default function Sign(props){
                         ><span className={styleSign.signup}>sign up</span></button>
                     </form>
                 </div>
-                <p className={styleSign.question}>already have an account?<span className={styleSign.login} onClick={() => setOpenLogin(true)}>login</span></p>
+                <p className={styleSign.question}>already have an account?<span className={styleSign.login} onClick={handleOpen}>login</span></p>
+                {
+                    successMessage && (
+                        <PopUpMessage message={successMessage} type="success" onClose={handleCloseMessage}/>
+                    )
+                }
+                {
+                    errorMessage && 
+                    <PopUpMessage message={errorMessage} type="error" onClose={handleCloseMessage} />
+                }
             </div>
             </div>
             </div>

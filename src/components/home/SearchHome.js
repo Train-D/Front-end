@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import style from"../search/search.module.css";
 import {Link} from "react-router-dom";
+import { Context } from "../../Context/TripContext";
 
 export default function SearchHome(){
     const[select, setSelect] = useState("");
@@ -22,118 +23,90 @@ export default function SearchHome(){
     const numberOfDaysToAdd = 0;
     const date = today.setDate(today.getDate() + numberOfDaysToAdd);
     const defaultValue = new Date(date).toISOString().split('T')[0]
+    
+    const {setDate, token} = useContext(Context)
+    const [data, setData] = useState({});    
+    
+    useEffect(()=>{
+    const fetchData = async () =>{
+    const response = await fetch("https://traind.azurewebsites.net/api/Trips/FromTo",{
+        method:'GET',
+        headers:{
+            'Content-Type' : 'application/json',
+            'Accept' : 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    const responseData = await response.json();
+    setData(responseData)
+    };
+    fetchData();
+},[])
+
+    const[fromCity, setFromCity] = useState('');    
+const[toCity, setToCity] = useState('');
+const toOptions = data[fromCity]
+const[selectDate, setSelectedDate] = useState(defaultValue)
+const [cityData, setCitData] = useState([])
+
+const handleFromCitySelect = (e) =>{
+    const city = e.target.value;
+    setFromCity(city)
+    setToCity("");
+}
+console.log(fromCity)
+console.log(toCity)
+const handleToCitySelect = async (e) =>{
+    setToCity(e.target.value)
+}
+
+const handleSelectedDate = async (e) =>{
+    setSelectedDate(e.target.value)
+}
+    
     return(
         <div className={style.search_container}>
-                <select name="From" 
+                <select name="from" 
+                        value={fromCity}
                     className={style.from_list}
-                    onChange={(e)=>{
-                        const selected = e.target.value;
-                        setSelect(selected);
-                    }}
+                    onChange={handleFromCitySelect}
                 >
-                <option value=""  disabled selected hidden className={style.select_name}> From</option>
-                    <option 
-                        value="cairo"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Cairo
-                    </option>
-                    <option 
-                        value="Alexandria"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Alexandria
-                    </option>
-                    <option 
-                        value="Ismailia"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Ismailia
-                    </option>
-                    <option 
-                        value="PortSaid"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        PortSaid
-                    </option>
-                    <option 
-                        value="Aswan"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Aswan
-                    </option>
-                    <option 
-                        value="Luxor"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Luxor
-                    </option>
+                    <option value="" disabled selected hidden className={style.select_name}> From</option>
+                    {
+                        Object.keys(data).map((city)=>(
+                            <option key={city} value={city}
+                            style={selectStyle}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}>
+                                    {city}
+                            </option>
+                        ))
+                    }
                 </select>
-                <select name="To" className={style.to_list}>
+                <select name="To" 
+                    value={toCity} 
+                    className={style.to_list} 
+                    disabled={!fromCity} 
+                    onChange={handleToCitySelect}
+                >
                 <option value=""  disabled selected hidden className={style.select_name}> TO</option>
-                <option 
-                        value="cairo"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Cairo
-                    </option>
-                    <option 
-                        value="Alexandria"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Alexandria
-                    </option>
-                    <option 
-                        value="Ismailia"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Ismailia
-                    </option>
-                    <option 
-                        value="PortSaid"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        PortSaid
-                    </option>
-                    <option 
-                        value="Aswan"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Aswan
-                    </option>
-                    <option 
-                        value="Luxor"
-                        style={selectStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        Luxor
-                    </option>
+                {
+                    toOptions && toOptions.map((city) =>(
+                        <option key={city} value={city}>
+                            {city}
+                        </option>
+                    ))
+                }
                 </select>
-                <input type="date" className={style.date} placeholder="Date" defaultValue={defaultValue}/>
-                    <button className={style.search_btn} ><span><Link to="/search" style={{textDecoration:"none", color:"#FFFFFF"}} > Search</Link></span></button>
+                <input 
+                    type="date" 
+                    className={style.date} 
+                    placeholder="Date"
+                    name="Date" 
+                    value={selectDate}
+                    onChange={handleSelectedDate}
+                />
+                <button className={style.search_btn} ><span><Link to="/search" style={{textDecoration:"none", color:"#FFFFFF"}} > Search</Link></span></button>
             </div>
     )
 }

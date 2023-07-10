@@ -195,7 +195,7 @@
     background-color: transparent;
 }
 .more_button span{
-    width: 65px;
+    width: 30%;
     height: 19px;
     font-style: normal;
     font-family: 'Inria Serif', serif;
@@ -204,6 +204,7 @@
     line-height: 19px;
     letter-spacing: 0.022em;
     color: #FFFFFF;
+
 }
 .arrowIcon{
     width: 10px;

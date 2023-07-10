@@ -10,9 +10,12 @@ import { Link } from "react-router-dom";
 import googleIcon from "./google-play-icon.svg";
 import appleIcon from "./apple.svg";
 import arrowIcon from "./arrow.svg";
-
+//import ButtonContext from '../booking/ButtonContext';
+//import { useContext } from "react";
 
 export default function Profile() {
+//    const [ handleSubmit, openTicket ] = useContext(ButtonContext);
+
     const [value, setValue] = useState()
     const [visibleDiv, setVisibleDiv] = useState(1);
 
@@ -60,11 +63,11 @@ export default function Profile() {
                         <div className={profStyle.form_profile}>
                             <form className={profStyle.forminput} >
                                 <div className={profStyle.name}>
-                                    <input type="text" name="firstname" className={profStyle.firstname} placeholder="First Name" />
-                                    <input type="text" name="lastname" className={profStyle.lastname} placeholder="Last Name" />
+                                    <input type="text" name="firstname" className={profStyle.firstname} placeholder="First Name" ></input>
+                                    <input type="text" name="lastname" className={profStyle.lastname} placeholder="Last Name" ></input>
                                 </div>
-                                <input type="text" name="User name" className={profStyle.username} placeholder="User name" />
-                                <input type="email" name="email" className={profStyle.email} placeholder="E-mail" />
+                                <input type="text" name="User name" className={profStyle.username} placeholder="User name" ></input>
+                                <input type="email" name="email" className={profStyle.email} placeholder="E-mail" ></input>
                                 <PhoneInput placeholder="Phone number" className={profStyle.num} value={value} onChange={setValue} />
                                 <input type="text" name="City" className={profStyle.city} placeholder="City" />
                                 <button type="submit" className={profStyle.save_btn}><span className={profStyle.save}>Save</span></button>
@@ -79,8 +82,8 @@ export default function Profile() {
                         <div>alex</div>
                         <div>time</div>
                         <div className={profStyle.ticketview} >
-                            <Link to="/tikct" style={{ textDecoration: "none", color: "#FFFFFF" }} > View </Link>
-                            <img src={arrowIcon} alt="" className={profStyle.arrowIcon} />
+                            <button   >View <img src={arrowIcon} alt="" className={profStyle.arrowIcon} /></button> 
+                            
                         </div>
 
                     </div>
@@ -89,7 +92,7 @@ export default function Profile() {
                     <p style={{ textAlign: "center" }}>You can book tickets</p>
                     <hr />
                     <div style={{ textAlign: "center" }}>
-                        <button className={profStyle.book_btn}><span><Link to="/book" style={{ textDecoration: "none", color: "#FFFFFF" }} > BOOK NOW</Link></span></button>
+                        <button className={profStyle.book_btn}><span><Link to="/search" style={{ textDecoration: "none", color: "#FFFFFF" }} > BOOK NOW</Link></span></button>
                     </div>
                     <div className={profStyle.or}>
                         <hr />

@@ -11,7 +11,7 @@ import close from "./close.svg";
 
 export default function Ticket(props){
     
-    const {selectedTripId, date, creditCardData, selectedSeat} = useContext(Context); 
+    const {selectedTripId, date, creditCardData, selectedSeat} = useContext(Context) ; 
     
     return(props.trigger) ? (
         <div className={style.ticketPage}>

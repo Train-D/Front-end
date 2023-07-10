@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import style from "./reservation.module.css";
-import car1 from"./car1.svg";
-import cars from "./cars.svg";
+import car1 from"./Group 30.svg";
+import cars from "./Group 32.svg";
 import shape1 from "./Ellipse 7.svg";
 import TrainsCar from "./TrainsCar";
 import car from "./Group 283.svg"
@@ -97,14 +97,14 @@ export default function Reservation(){
         setCar1Bg(false);
         console.log(true)
     }
-    const handleBorder4 = () =>{
-        setShowBorder1(false);
-        setShowBorder2(false);
-        setShowBorder3(false);
-        setShowBorder4(true);
-        setCar1Bg(false);
-        console.log(true)
-    }
+    // const handleBorder4 = () =>{
+    //     setShowBorder1(false);
+    //     setShowBorder2(false);
+    //     setShowBorder3(false);
+    //     setShowBorder4(true);
+    //     setCar1Bg(false);
+    //     console.log(true)
+    // }
 
 
     const handleSeatClick = (seat) => {
@@ -122,43 +122,29 @@ export default function Reservation(){
             <div className={style.trains}>
                 <div className={style.classes}>
                     <div className={style.classA__text}>
-                        <h1>1A</h1>
-                        <h1>2A</h1>
-                        <h1>3A</h1>
+                        <h1 style={{marginLeft:"15%"}}>1A</h1>
+                        <h1 style={{marginLeft:"35%"}}>2A</h1>
                     </div>
-                    <div className={style.classB__text}>
-                        <h1>4B</h1>
-                        <h1>5B</h1>
-                        <h1>6B</h1>
+                    <div className={style.classB__text} style={{marginRight:"0%"}}>
+                        <h1>3B</h1>
+                        <h1 style={{marginLeft:"35%", marginRight:"0%"}}>4B</h1>
                     </div>
                     <div className={style.classC__text}>
-                        <h1>7C</h1>
-                        <h1>8C</h1>
-                        <h1>9C</h1>
-                    </div>
-                    <div className={style.classD__text}>
-                        <h1>11D</h1>
-                        <h1>12D</h1>
-                        <h1>13D</h1>
+                        <h1>5C</h1>
+                        <h1 style={{marginLeft:"25%"}}>6C</h1>
+                        <h1 style={{marginLeft:"30%"}}>7C</h1>
                     </div>
                 </div>
                 <div className={style.trains__body}>
                 <div className={style.classA} onClick={handleBorder1} style={style1}>
                     <img src={car1} alt="" className={style.car1img}/>
                     <img src={cars}  alt="" className={style.carsimg}/>
-                    <img src={cars}  alt="" className={style.carsimg}/>
                 </div>
                 <div className={style.classB} onClick={handleBorder2} style={style2}>
                     <img src={cars} alt="" className={style.carsimg}/>
                     <img src={cars}  alt="" className={style.carsimg}/>
-                    <img src={cars}  alt="" className={style.carsimg}/>
                 </div>
                 <div className={style.classC} onClick={handleBorder3} style={style3}>
-                    <img src={cars} alt="" className={style.carsimg}/>
-                    <img src={cars}  alt="" className={style.carsimg}/>
-                    <img src={cars}  alt="" className={style.carsimg}/>
-                </div>
-                <div className={style.classD} onClick={handleBorder4} style={style4}>
                     <img src={cars} alt="" className={style.carsimg}/>
                     <img src={cars}  alt="" className={style.carsimg}/>
                     <img src={cars}  alt="" className={style.carsimg}/>

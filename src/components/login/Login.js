@@ -10,8 +10,17 @@ import Forget from "../forget/Forget";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../Context/TripContext";
+import PopUpMessage from "../popUpMssg/popUpMssg";
 
 export default function Login(props){
+
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleCloseMessage = () =>{
+        setSuccessMessage('');
+        setErrorMessage('');
+    }
     
     const [openForgetScreen, setOpenForgetScreen] = useState(false)
     const {setToken} = useContext(Context);
@@ -19,6 +28,14 @@ export default function Login(props){
         username:"",
         password:""
     })
+
+    const style = {
+        display : openForgetScreen ? "none" : "flex"
+    }
+
+    const handleOpen = () =>{
+        setOpenForgetScreen(true)
+    }
 
     console.log(props.data);
 
@@ -47,6 +64,13 @@ export default function Login(props){
             localStorage.setItem("toke", token)
             console.log(token)
             console.log(message)
+            if(message === "Login Successfully"){
+                setSuccessMessage(message);
+                setErrorMessage("")
+            }else{
+                setErrorMessage(message);
+                setSuccessMessage("")
+            }
         })
         .catch(error => console.error(error))
     }
@@ -54,7 +78,8 @@ export default function Login(props){
     const [passwordShown, setPasswordShown] = useState(false);
 
     return(props.trigger) ? (
-        <div className={styleLogin.loginPage}>
+        <div>
+            <div className={styleLogin.loginPage} style={style}>
             <div className={styleLogin.login_container}>
             <div className={styleLogin.left_side}>
                 <div className={styleLogin.sidecotent}>
@@ -102,7 +127,7 @@ export default function Login(props){
                             placeholder="Password"
                         />
                             <button 
-                            onClick={() => setOpenForgetScreen(true)}
+                            onClick={handleOpen}
                             style={{border:"0px", color:"#FFFFFF", fontSize:"16px", fontWeight:"700", lineHeight:"normal", fontFamily:"'Inria Serif', serif", cursor:"pointer", backgroundColor:"transparent", marginLeft:"55%" }}>
                                 Forget Password
                             </button>
@@ -110,6 +135,16 @@ export default function Login(props){
                     </form>
                 </div>
             </div>
+        </div>
+        {
+                    successMessage && (
+                        <PopUpMessage message={successMessage} type="success" onClose={handleCloseMessage}/>
+                    )
+                }
+                {
+                    errorMessage && 
+                    <PopUpMessage message={errorMessage} type="error" onClose={handleCloseMessage} />
+                }
         </div>
         <Forget trigger={openForgetScreen} setTrigger={setOpenForgetScreen} />
         </div>
