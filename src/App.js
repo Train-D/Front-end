@@ -22,6 +22,7 @@ import StationDetails from "./components/stations/StationDetails";
 import SearchBar from "./components/stations/SearchBar";
 import Profile from "./components/profile/Profile";
 import Sign from "./components/sign/Sign";
+import Send from "./components/contact/sendsuccessfully";
 
 // export default function App(){
 //   return(
@@ -38,10 +39,8 @@ import Sign from "./components/sign/Sign";
 // }
 
 export default function App(){
-  const [user, setUserData] = useState(null);
   return(
     <div className="App">
-      {user ? <Profile user={user} /> : <Sign setUser={setUserData} />}
       <AllContextProvider>
       <BrowserRouter>
         <Routes>
@@ -58,6 +57,7 @@ export default function App(){
           <Route path="/stationdetails/:stationName" element={<StationDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/station-details" element={<Stations />} />
+          <Route path="/sendsuccessfully" element={<Send/>}/>
         </Routes>
       </BrowserRouter>
         <MainFooter />

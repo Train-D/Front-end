@@ -47,3 +47,17 @@ ul{
 .searchresult::-webkit-scrollbar{
     background-color: #76655D;
 }
+
+@media only screen and (max-width :500px){
+    
+    .rightpart{
+        width: 90%;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .search{
+        margin-top: 10%;
+    }
+
+}

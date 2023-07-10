@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useContext, useEffect, useState } from "react";
 import profStyle from "./Profile.module.css";
 import logoIcon from "./logo.svg";
 import ProfileIcon from "./ProfileIcon.png";
@@ -10,12 +10,14 @@ import { Link } from "react-router-dom";
 import googleIcon from "./google-play-icon.svg";
 import appleIcon from "./apple.svg";
 import arrowIcon from "./arrow.svg";
-//import ButtonContext from '../booking/ButtonContext';
-//import { useContext } from "react";
+import Navbar from "../Navbar/Navbar";
+import ViewTicket from "./ViewT";
+import { Context } from "../../Context/TripContext";
 
-export default function Profile({ user }) {
-//    const [ handleSubmit, openTicket ] = useContext(ButtonContext);
 
+export default function Profile() {
+
+    const [openTicket, setOpenTicket] = useState(false)
     const [value, setValue] = useState()
     const [visibleDiv, setVisibleDiv] = useState(1);
 
@@ -25,10 +27,7 @@ export default function Profile({ user }) {
     return (
         <div className={profStyle.body}>
             <div className={profStyle.part1}>
-                <div className={profStyle.logos}>
-                    <img src={logoIcon} className={profStyle.logoIcon} alt="" />
-                    <h1 className={profStyle.logo}>TrainD</h1>
-                </div>
+                <Navbar />
             </div>
             <div className={profStyle.part2}>
                 <div className={profStyle.showbox}>
@@ -45,13 +44,7 @@ export default function Profile({ user }) {
                             Your Ticket
                         </button>
                     </div>
-                    <hr />
-                    <div className={profStyle.profilelist}>
-                        <img src={NotationIcon} alt="" className={profStyle.icon} />
-                        <button className={profStyle.data} onClick={() => handleButtonClick(3)}>
-                            Notification
-                        </button>
-                    </div>
+
                 </div>
                 <div className={profStyle.Profile} style={{ display: visibleDiv === 1 ? 'block' : 'none' }} >
                     <p>Passenger details</p>
@@ -62,30 +55,37 @@ export default function Profile({ user }) {
                         </div>
                         <div className={profStyle.form_profile}>
                             <form className={profStyle.forminput} >
+                                
                                 <div className={profStyle.name}>
-                                    <input type="text" name="firstname" className={profStyle.firstname} placeholder="First Name" >{user.firstName}</input>
-                                    <input type="text" name="lastname" className={profStyle.lastname} placeholder="Last Name" >{user.lastName}</input>
+                                    <input type="text" name="firstname" className={profStyle.firstname} placeholder="First Name" ></input>
+                                    <input type="text" name="lastname" className={profStyle.lastname} placeholder="Last Name" ></input>
                                 </div>
-                                <input type="text" name="User name" className={profStyle.username} placeholder="User name" >{user.userName}</input>
-                                <input type="email" name="email" className={profStyle.email} placeholder="E-mail" >{user.email}</input>
+                                <input type="text" name="User name" className={profStyle.username} placeholder="User name" ></input>
+                                <input type="email" name="email" className={profStyle.email} placeholder="E-mail" ></input>
                                 <PhoneInput placeholder="Phone number" className={profStyle.num} value={value} onChange={setValue} />
                                 <input type="text" name="City" className={profStyle.city} placeholder="City" />
+                                <Link className={profStyle.change}>Change Password</Link>
                                 <button type="submit" className={profStyle.save_btn}><span className={profStyle.save}>Save</span></button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div className={profStyle.Profile} style={{ display: visibleDiv === 2 ? 'block' : 'none' }}>
+                <div className={profStyle.vtiket} style={{ display: visibleDiv === 2 ? 'block' : 'none' }}>
                     <p>Your tickets</p>
                     <hr />
                     <div className={profStyle.ticketbox}>
-                        <div>alex</div>
-                        <div>time</div>
+                        <div>Alexandria</div>
+                        <div>9:00 am</div>
                         <div className={profStyle.ticketview} >
-                            <button   >View <img src={arrowIcon} alt="" className={profStyle.arrowIcon} /></button> 
-                            
+                            <button onClick={() => setOpenTicket(true)} >View <img src={arrowIcon} alt="" className={profStyle.arrowIcon} /></button>
                         </div>
-
+                    </div>
+                    <div className={profStyle.ticketbox}>
+                        <div>Cairo</div>
+                        <div>10:30 pm</div>
+                        <div className={profStyle.ticketview} >
+                            <button onClick={() => setOpenTicket(true)} >View <img src={arrowIcon} alt="" className={profStyle.arrowIcon} /></button>
+                        </div>
                     </div>
                 </div>
                 <div className={profStyle.book} style={{ display: visibleDiv === 2 ? 'block' : 'none', marginRight: "5%" }}>
@@ -121,28 +121,11 @@ export default function Profile({ user }) {
                     </div>
                 </div>
 
-                <div className={profStyle.Profile} style={{ display: visibleDiv === 3 ? 'block' : 'none' }}>
-                    <p>Promotions</p>
-                    <hr />
-                    <div className={profStyle.notification}>
-                        Receive coupons, promotions, surveys, product updates, and travel inspiration from Omio and our partners.
-                    </div>
-                    <div className={profStyle.display} >
-                        <div>
-                            Email
-                        </div>
-                        <div>
-                            <div className={profStyle.toggle}>
-                                <input type="checkbox" id="switch" />
-                                <label for="switch"></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
 
             </div>
+            <div>
+            </div>
+            <ViewTicket trigger={openTicket} setTrigger={setOpenTicket} />
         </div>
     )
 }

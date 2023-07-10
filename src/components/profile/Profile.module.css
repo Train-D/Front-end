@@ -49,7 +49,7 @@ hr {
 .part2 {
     width: 100%;
     display: flex;
-    gap: 5%;
+    gap: 3%;
 }
 
 .showbox {
@@ -69,7 +69,7 @@ hr {
     margin-left: 4%;
 }
 
-button {
+.profilelist button {
     width: 100%;
     font-size: 20px;
     color: #6d655d;
@@ -80,7 +80,7 @@ button {
 
 }
 
-button:hover {
+.profilelist button:hover {
     color: rgb(18, 18, 18);
 }
 
@@ -197,16 +197,28 @@ button:hover {
     color: rgba(72, 71, 71, 0.88);
     font-size: 16px;
 }
+.change{
+color: rgba(53, 53, 53, 1);
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+margin-top: 1%;
+text-decoration: none;
+margin-left: 3%;
+
+
+}
 
 .save_btn {
 
     width: 40%;
     height: 44px;
     margin-bottom: 10px;
-    margin-top: 17px;
-    background-color: #41312A;
+    margin-top: 5px;
+    background-color: rgba(65, 49, 42, 0.97);
     border: 1px solid #41312A;
-    border-radius: 14px;
+    border-radius: 4px;
     align-self: center;
 }
 
@@ -215,12 +227,29 @@ button:hover {
     letter-spacing: 2px;
     font-family: 'Inria Serif';
     font-style: normal;
-    font-size: 28px;
+    font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+.vtiket{
+    width: 70%;
+    height: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 20px;
+    background-color: #ECE6E3;
+}
+.vtiket p {
+    font-family: 'Inria Serif';
+    font-style: normal;
+    color: #6d655d;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .ticketbox {
@@ -235,15 +264,18 @@ button:hover {
     margin-bottom: 5%;
     padding: 2%;
     padding-right: 0%;
-    gap: calc(100%/4);
+    gap: calc(100%/4.5);
+    color: #FFFFFF;
+    font-family: 'Inria Serif';
 }
 .ticketview button{
     background:none;
     border: none;
     color: #eeeeee;
+    text-align: right;
 }
 .book {
-    width: 30%;
+    width: 40%;
     height: 100%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -400,4 +432,52 @@ button:hover {
 .toggle input[type="checkbox"]:checked+label {
     left: 25px;
     background-color: #2ecc71;
+}
+
+/*tabletMode*/
+@media only screen and (min-width:501px) and (max-width:1000px){
+    .part2{
+        display: block;
+    }
+    .showbox{
+        width: 30%;
+    }
+    .Profile{
+        width: 90%;
+        margin: 5%;
+        padding-top: 3%;
+        padding-bottom:3% ;
+    }
+    .book{
+        width: 45%;
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 3%;
+    }
+    
+}
+
+/* mobile mode */
+@media only screen and (max-width :600px){
+    .part2{
+        display: block;
+    }
+    .showbox{
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        
+    }
+    .Profile{
+        width: 90%;
+        margin: 5%;
+        padding-top: 3%;
+        padding-bottom:3% ;
+    }
+    .book{
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding: 3%;
+    }
 }

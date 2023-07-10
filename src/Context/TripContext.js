@@ -8,9 +8,13 @@ export const AllContextProvider = ({ children }) => {
   const [date, setDate] = useState(null);
   const [creditCardData, setCreditCardData] = useState(null);
   const [selectedSeat, setSelectedSeat] = useState(null);
-
+  const [firstName , setFirstName] = useState(null);
+  const [lastName , setLastName] = useState(null);
+  const [userName , setuserName] = useState(null);
+  const [email , setEmail] = useState(null);
+  
   return (
-    <Context.Provider value={{token, setToken, selectedTripId, date, setSelectedTripId, setDate, creditCardData, setCreditCardData, selectedSeat, setSelectedSeat }}>
+    <Context.Provider value={{token, firstName , setFirstName,lastName , setLastName,userName , setuserName,email , setEmail, setToken, selectedTripId, date, setSelectedTripId, setDate, creditCardData, setCreditCardData, selectedSeat, setSelectedSeat }}>
       {children}
     </Context.Provider>
   );

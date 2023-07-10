@@ -21,6 +21,7 @@ export default function Aboutsec(){
                 <Link style={{ textDecoration: "none", color: "white" }} to="/about">See More</Link>
                 </button>
             </div>
+            <div className={style.rightsecconent} >
             <div className={style.rightsec}>
                 <div className={style.sec1}>
                     <div className={style.book_box}>
@@ -48,6 +49,7 @@ export default function Aboutsec(){
                         <h1>Track Your Train</h1>
                         <p>It allows you to track your train step by step</p>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

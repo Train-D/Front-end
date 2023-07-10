@@ -35,9 +35,7 @@ export default function Sign(props){
             },
             body : JSON.stringify(userData)
         });
-        const userData = await response.json();
-      // Update the user profile with the new user data
-        setUserData(userData);
+        
         
         if(response.ok){
             const data = await response.json();
