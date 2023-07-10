@@ -5,6 +5,7 @@ import trustIcon from "./trusticon.svg";
 import trainIcon from "./trainIcon.svg";
 import safetyIcon from "./safeticon.svg";
 import lines from "./lines.svg";
+import { Link } from "react-router-dom";
 
 export default function Aboutsec(){
     return(
@@ -16,10 +17,11 @@ export default function Aboutsec(){
                     process of securing train reservation and provide 
                     you with a seamless, hassle-free experience.
                 </p>
-                <button className={style.seemore_btn}>
-                    See More
+                <button style={{textAlign :"center"}}  className={style.seemore_btn}>
+                <Link style={{ textDecoration: "none", color: "white" }} to="/about">See More</Link>
                 </button>
             </div>
+            <div className={style.rightsecconent} >
             <div className={style.rightsec}>
                 <div className={style.sec1}>
                     <div className={style.book_box}>
@@ -47,6 +49,7 @@ export default function Aboutsec(){
                         <h1>Track Your Train</h1>
                         <p>It allows you to track your train step by step</p>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

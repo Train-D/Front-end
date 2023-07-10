@@ -5,10 +5,13 @@ import phoneIcon from "./phoneicon.svg";
 import mailIcon from "./mailicon.svg";
 import { useState } from "react";
 import PhoneInput from 'react-phone-number-input/input'
+import Send from "./sendsuccessfully";
+import { Link } from "react-router-dom";
 
 
 export default function Contact() {
     const [value, setValue] = useState()
+    const [openPage, setOpenPage] = useState(false)
     return (
         <div className={style.contact}>
             <div className={style.maincontact}>
@@ -53,8 +56,9 @@ export default function Contact() {
                                 <input type="email" name="email" className={style.email} placeholder="E-mail" />
                                 <PhoneInput placeholder="Phone number" className={style.num} value={value} onChange={setValue} />
                                 <input type="text" name="massage" className={style.massage} placeholder="Type your Message" />
-                                <button type="submit" className={style.send_btn}><span className={style.send}>Send</span></button>
+                                <button type="submit" className={style.send_btn}><span className={style.send}><Link to="/sendsuccessfully" style={{ textDecoration: "none", color: "#FFFFFF" }} >Send</Link></span></button>
                             </form>
+                            
 
                         </div>
                     </div>

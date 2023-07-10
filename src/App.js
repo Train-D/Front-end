@@ -21,6 +21,8 @@ import Forget from "./components/forget/Forget";
 import StationDetails from "./components/stations/StationDetails";
 import SearchBar from "./components/stations/SearchBar";
 import Profile from "./components/profile/Profile";
+import Sign from "./components/sign/Sign";
+import Send from "./components/contact/sendsuccessfully";
 
 // export default function App(){
 //   return(
@@ -51,25 +53,15 @@ export default function App(){
           <Route path="/reset" element={<ResetPassword/>}/>
           <Route path="reservation" element={<Reservation/>} />
           <Route path="/forget" element={<Forget/>} />
+          <Route path="/" element={<SearchBar />} />
+          <Route path="/stationdetails/:stationName" element={<StationDetails />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/station-details" element={<Stations />} />
+          <Route path="/sendsuccessfully" element={<Send/>}/>
         </Routes>
       </BrowserRouter>
         <MainFooter />
       </AllContextProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<AboutUs />} />
-                    <Route path="/book" element={<Book />} />
-                    <Route path="/stations" element={<Stations />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/search" element={<SearchPage />} />
-                    <Route path="/" element={<SearchBar />} />
-                    <Route path="/stationdetails/:stationName" element={<StationDetails />} />
-                    <Route path="/profile" element={<Profile />} />
-                    
-                </Routes>
-            </BrowserRouter>
-            <MainFooter />
         </div>
   )
 }

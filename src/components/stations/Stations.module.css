@@ -54,7 +54,18 @@ width: 100%;
 
 /*tabletMode*/
 @media only screen and (min-width:501px) and (max-width:1000px){
-    
+    .body_station{
+        width: 100%;
+        display: inline-grid;
+        justify-items: center;
+        gap: 0%;
+    }
+    .leftpart{
+        width: 80%;
+        margin-left: 5%;
+        margin-right: 5%;
+        text-align: left;
+    }
 }
 
 /* mobile mode */

@@ -35,6 +35,8 @@ export default function Sign(props){
             },
             body : JSON.stringify(userData)
         });
+        
+        
         if(response.ok){
             const data = await response.json();
             console.log(`${JSON.stringify(data)}`)

@@ -127,6 +127,7 @@
 form {
     margin: 10%;
     margin-top: 0%;
+    margin-bottom: 3%;
 }
 
 .contact_form {
@@ -208,9 +209,9 @@ form {
 
     width: 40%;
     height: 44px;
-    margin-left: 0%;
+    margin-left: 10%;
     margin-bottom: 50px;
-    margin-top: 17px;
+    margin-top:0px;
     background-color: #41312A;
     border: 1px solid #41312A;
     border-radius: 14px;

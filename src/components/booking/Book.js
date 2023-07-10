@@ -5,6 +5,7 @@ import Reservation from "./Reservation";
 import Payment from "./Payment";
 import Ticket from "../ticket/Ticket";
 import { Context } from "../../Context/TripContext";
+import ButtonContext from './ButtonContext';
 
 
 export default function Book(){
@@ -13,7 +14,7 @@ export default function Book(){
     const [customer, setCustomer] = useState({})
     const [payment, setPayment] = useState({})
     const [ticket, setTicket] = useState({})
-    const {selectedTripId, date, creditCardData, selectedSeat, token} = useContext(Context);
+    const {selectedTripId, date, creditCardData, selectedSeat, token} = useContext(Context) ;
     // const {creditData} = useContext(CreditDataContext);
     console.log(selectedSeat)
     console.log(selectedTripId)
@@ -139,7 +140,12 @@ export default function Book(){
                     <div className={style.price}>
                         <span>Price:</span>
                     </div>
-                    <button className={style.book_btn }  onClick={handleSubmit}>Book</button>
+                    <ButtonContext.Provider value={{ handleSubmit, openTicket }}>
+                        
+                        <button className={style.book_btn } onClick={handleSubmit}>Book</button>
+                        
+                        </ButtonContext.Provider>
+                    
                 </div>
             </div>
             <Ticket trigger={openTicket} setTrigger={setOpenTicket} />
